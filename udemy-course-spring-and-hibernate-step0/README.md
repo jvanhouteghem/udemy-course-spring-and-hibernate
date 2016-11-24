@@ -1,7 +1,7 @@
 # udemy-course-spring-and-hibernate
 
 
-Step 1 : Installs
+Step 0 : Installs
 ---
 
 I. Pre-requisites

@@ -1,0 +1,1628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Spring</title>
+  <link rel="alternate" href="https://spring.io/blog" />
+  <link rel="self" href="https://spring.io/blog.atom" />
+  <id>http://spring.io/blog.atom</id>
+  <icon>https://spring.io/favicon.ico</icon>
+  <updated>2016-11-23T19:59:00Z</updated>
+  <entry>
+    <title>Spring Cloud Data Flow 1.1 GA released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/23/spring-cloud-data-flow-1-1-ga-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Pollack</name>
+    </author>
+    <id>tag:spring.io,2016-11-23:2709</id>
+    <updated>2016-11-23T19:59:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the team, I am pleased to announce the GA release of Spring Cloud Data Flow 1.1.  Follow the links in the &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#getting-started"&gt;getting started guide&lt;/a&gt; to download the local server implementation and shell to create Stream and Tasks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;General highlights of the 1.1 GA Release include:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Builds upon Spring Boot 1.4, Spring Cloud Camden SR2, Spring Integration 4.3 and Spring Cloud Task 1.1 release improvements.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Adds &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#configuration-security-ldap-authentication"&gt;LDAP&lt;/a&gt;, &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#configuration-security-basic-authentication"&gt;Basic&lt;/a&gt; and &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#configuration-security-file-based-authentication"&gt;File&lt;/a&gt; based backend authentication&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Improvements to &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#configuration-security-oauth2"&gt;OAUTH backed authentication&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#_ldap_transport_security"&gt;LDAP authentication&lt;/a&gt; is now supported with SSL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Adds a form-based login page for non-OAUTH backend authentication methods such as the LDAP, Basic and File-based options&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Adds the ability to &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#_inline_vs_file_reference_properties_2"&gt;pass application specific properties via YAML file&lt;/a&gt;.  This is particularly useful when deploying streams that require many deployment properties to be set.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Portable deployment properties for memory, disk and cpu are in place for support across various runtime implementations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Documentation for the core &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#api-guide"&gt;REST API&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Updated reference documentation showing how to integrate with &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#_spring_boot_admin"&gt;Spring Boot Admin to visualize server metrics&lt;/a&gt; and how to &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RELEASE/reference/htmlsingle/#_monitoring_deployed_applications"&gt;export Stream/Task application metrics to external application monitoring tools&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;UI Highlights include:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Bulk import and registration of stream and task app-starters&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bulk import support for Task definitions. This allows importing task definitions from a file or the ability to add multiple task-definitions using the Flo-editor (&lt;a href="https://drive.google.com/file/d/0BxM1nows33aTV2xHa3VfMV90MG8"&gt;video demonstration&lt;/a&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Adds Flo’s visual representation of running streams&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add visual representation for related streams. This representation also includes nested TAPs and the downstream processing nodes in an overall topology view.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/master/spring-cloud-dataflow-docs/src/main/asciidoc/images/dataflow-nested-tap-streams.png" alt="Visualization of Taps"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;List pages now support sorting&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Server-side search support for stream and task list pages&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For the complete list of features, bug-fixes, and improvements, please refer to the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/milestones?state=closed"&gt;closed 1.1 family of GitHub issues&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We welcome feedback and contributions! If you have any questions, comments or suggestions, please let us know via &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub Issues&lt;/a&gt;, &lt;a href="http://stackoverflow.com/tags/spring-cloud-dataflow"&gt;StackOverflow&lt;/a&gt;, or using the #SpringCloudDataFlow hashtag on Twitter.&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>First milestone of next-generation Spring Data released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/23/first-milestone-of-next-generation-spring-data-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Oliver Gierke</name>
+    </author>
+    <id>tag:spring.io,2016-11-23:2708</id>
+    <updated>2016-11-23T13:42:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Data team, I’d like to announce the first milestone of the Kay release train. This is a special release train as it&amp;rsquo;s going to ship a new generation of Spring Data that will include a couple of breaking changes going forward.&lt;/p&gt;&lt;h2&gt;&lt;a href="#infrastructure-upgrades" class="anchor" name="infrastructure-upgrades"&gt;&lt;/a&gt;Infrastructure upgrades&lt;/h2&gt;
+&lt;p&gt;The first and most noticeable change is the upgrade to Java 8 as a minimum baseline (no JDK 6 compatibility anymore) and an upgrade to Spring 5 as framework foundation. In subsequent milestones we&amp;rsquo;re going to ship some significant internal rewrites that will also affect user facing API to make use of the new language features in JDK 8.&lt;/p&gt;&lt;h2&gt;&lt;a href="#support-for-reactive-data-access" class="anchor" name="support-for-reactive-data-access"&gt;&lt;/a&gt;Support for reactive data access&lt;/h2&gt;
+&lt;p&gt;The most significant additions that made it into the milestone is the addition of support for reactive data access for selected stores. This means: reactive Spring Data repositories and templates for MongoDB, Cassandra and Redis. Other stores are going to follow with subsequent milestones. The introduction of reactive data access support for MongoDB also required us to finally switch from the legacy &lt;code&gt;DBObject&lt;/code&gt; API to MongoDB&amp;rsquo;s current &lt;code&gt;Document&lt;/code&gt; one.&lt;/p&gt;
+&lt;p&gt;We have example projects ready for all of these stores:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-data-examples/tree/master/mongodb/reactive"&gt;Reactive examples for MongoDB&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-data-examples/tree/master/cassandra/reactive"&gt;Reactive examples for Cassandra&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-data-examples/tree/master/redis/reactive"&gt;Reactive examples for Redis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We consider this release a starting point to get early feedback from you guys. There are some gaps to be filled, support for additional stores to be added but we&amp;rsquo;d definitely like to hear from you already.&lt;/p&gt;
+&lt;p&gt;The Spring team is currently preparing a couple of reactive example projects to showcase the interplay of different projects. Also, a blog post covering the new reactive features in Spring Data is going to follow in a couple of days.&lt;/p&gt;&lt;h2&gt;&lt;a href="#the-laundry-list" class="anchor" name="the-laundry-list"&gt;&lt;/a&gt;The laundry list&lt;/h2&gt;
+&lt;p&gt;That said, let&amp;rsquo;s round this of with the formalities.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-commons/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/2.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/commons/docs/2.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jpa/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/2.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/jpa/docs/2.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-keyvalue/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/2.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/keyvalue/docs/2.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Cassandra 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-cassandra/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/2.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/cassandra/docs/2.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Solr 3.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-solr/3.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/3.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/3.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/solr/docs/3.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Gemfire 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-gemfire/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/2.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/gemfire/docs/2.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 5.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-neo4j/5.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/5.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/5.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/neo4j/docs/5.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-mongodb/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/2.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/mongodb/docs/2.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Envers 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-envers/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/envers/docs/2.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/envers/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 3.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-rest-webmvc/3.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/3.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/3.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/rest/docs/3.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 2.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-redis/2.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/2.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/2.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/redis/docs/2.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 3.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/3.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/3.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/3.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/elasticsearch/docs/3.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 3.0 M1 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/3.0.0.M1"&gt;Artifacts&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/3.0.0.M1/api"&gt;JavaDocs&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/3.0.0.M1/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="http://docs.spring.io/spring-data/couchbase/docs/3.0.0.M1/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Find a curated changelog in our &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Kay"&gt;release train wiki&lt;/a&gt; or skim through a &lt;a href="https://jira.spring.io/issues/?filter=????"&gt;full list of changes in JIRA&lt;/a&gt;. Your feedback is welcome.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow for Apache YARN 1.1.0.RC1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/23/spring-cloud-data-flow-for-apache-yarn-1-1-0-rc1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Janne Valkealahti</name>
+    </author>
+    <id>tag:spring.io,2016-11-23:2707</id>
+    <updated>2016-11-23T12:38:07Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Cloud Data Flow team, I am pleased to announce the 1.1.0.RC1 release of &lt;a href="http://cloud.spring.io/spring-cloud-dataflow-server-yarn"&gt;Spring Cloud Data Flow for Apache YARN&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-yarn"&gt;Spring Cloud Data Flow for Apache YARN&lt;/a&gt; allows one to use all the goodness of &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow"&gt;Spring Cloud Data Flow&lt;/a&gt; (like the Shell and UI) while targeting Apache YARN as a backend. Stream components are deployed as individual apps in Apache YARN, leveraging the power of the platform to handle scaling and health monitoring.&lt;/p&gt;
+&lt;p&gt;This first release candicate&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Builds upon Spring Cloud Data Flow 1.1.0.RC1 and Spring Cloud Deployer 1.1.0.RC1.&lt;/li&gt;
+  &lt;li&gt;Support for keeping multiple deployer versions in hdfs.&lt;/li&gt;
+  &lt;li&gt;Preparation of supporting upgrades on Ambari when these become available with Ambari future versions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To get started using Spring Cloud Data Flow for Apache YARN &lt;a href="http://docs.spring.io/spring-cloud-dataflow-server-yarn/docs/1.1.0.RC1/reference/htmlsingle/#_spring_cloud_data_flow_runtime"&gt;follow these steps&lt;/a&gt; outlined in the reference documentation.&lt;/p&gt;
+&lt;p&gt;For a complete/cumulative list of changes and improvements, please refer to &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-yarn/issues?q=milestone%3A1.1.0.M1+is%3Aclosed"&gt;Server 1.1.0.M1 release&lt;/a&gt;, &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-yarn/issues?q=milestone%3A1.1.0.RC1+is%3Aclosed"&gt;Server 1.1.0.RC1 release&lt;/a&gt;, &lt;a href="https://github.com/spring-cloud/spring-cloud-deployer-yarn/issues?q=milestone%3A1.1.0.M1+is%3Aclosed"&gt;Deployer 1.1.0.M1 release&lt;/a&gt;, &lt;a href="https://github.com/spring-cloud/spring-cloud-deployer-yarn/issues?q=milestone%3A1.1.0.RC1+is%3Aclosed"&gt;Deployer 1.1.0.RC1 release&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Session 1.3.0 RC1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/23/spring-session-1-3-0-rc1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2016-11-23:2706</id>
+    <updated>2016-11-23T04:19:40Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Session 1.3.0.RC1. This release release closes lots of community submitted Pull Requests. For a complete list of changes see the &lt;a href="https://github.com/spring-projects/spring-session/milestone/16?closed=1"&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="what-s-new-in-spring-session-1-3-0-rc1" class="sect0"&gt;&lt;a class="anchor" href="#what-s-new-in-spring-session-1-3-0-rc1"&gt;&lt;/a&gt;What’s New in Spring Session 1.3.0 RC1&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Highlights include:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;First class &lt;a href="http://docs.spring.io/spring-session/docs/1.3.0.RC1/reference/html5/#spring-security"&gt;Spring Security’s RememberMe&lt;/a&gt; Support&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Updated guides to &lt;a href="https://github.com/spring-projects/spring-session/pull/652"&gt;use Lettuce&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://docs.spring.io/spring-session/docs/1.3.x-SNAPSHOT/reference/html5/#community-extensions"&gt;OrientDB Support&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Configuration Improvements&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Performance Optimizations&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bug Fixes&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h1 id="contributions" class="sect0"&gt;&lt;a class="anchor" href="#contributions"&gt;&lt;/a&gt;Contributions&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Without the community we couldn&amp;#8217;t be the successful project we are today. I&amp;#8217;d like to thank everyone that created issues &amp;amp; provided feedback.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="feedback-please" class="sect0"&gt;&lt;a class="anchor" href="#feedback-please"&gt;&lt;/a&gt;Feedback Please&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you have feedback on this release, I encourage you to reach out via &lt;a href="http://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-session/issues"&gt;GitHub Issues&lt;/a&gt;, or via the comments section. You can also ping me &lt;a href="https://twitter.com/rob_winch"&gt;@rob_winch&lt;/a&gt; or Joe &lt;a href="https://twitter.com/joe_grandja"&gt;@joe_grandja&lt;/a&gt; on Twitter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Of course the best feedback comes in the form of &lt;a href="https://github.com/spring-projects/spring-session/blob/1.3.0.RC1/CONTRIBUTING.adoc"&gt;contributions&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-session/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-session/docs/1.3.0.RC1/reference/html5/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-session"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tips: Cloud Foundry</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/23/spring-tips-cloud-foundry" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2016-11-20:2700</id>
+    <updated>2016-11-23T04:06:00Z</updated>
+    <content type="html">&lt;p&gt;Speaker: Josh Long&lt;br/&gt;&lt;a href="https://www.twitter.com/starbuxman"&gt;https://www.twitter.com/starbuxman&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi Spring fans! In this tip, we&amp;rsquo;ll look at Cloud Foundry, a an open-source cloud platform that&amp;rsquo;s optimized for managing applications. To those of you in the US, happy Thanksgiving tomorrow! &lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/T9KcS8s0RPs" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Task 1.1.0.RELEASE is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/22/spring-cloud-task-1-1-0-release-is-now-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Michael Minella</name>
+    </author>
+    <id>tag:spring.io,2016-11-22:2705</id>
+    <updated>2016-11-22T19:54:02Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce that Spring Cloud Task 1.1.0.RELEASE is now available via Github and the Pivotal download repository. Many thanks to all of those who contributed to this release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-task-1-1-0-offers-the-following-features" class="anchor" name="spring-cloud-task-1-1-0-offers-the-following-features"&gt;&lt;/a&gt;Spring Cloud Task 1.1.0 offers the following features:&lt;/h2&gt;
+&lt;p&gt;This is the generally available release (GA) for 1.1.0. This release addresses key enhancements to the project to allow for better coverage of operational concerns for tasks in a cloud environment. Features new to the 1.1.0 line include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;em&gt;Updated error handling&lt;/em&gt; - 1.0.x stored stack traces that were the result of task executions within the &lt;code&gt;TaskExecution#exitMessage&lt;/code&gt; field, requiring that this field perform double duty. First it was available for orchestration of tasks (similar to &lt;code&gt;StepExecution#exitStatus&lt;/code&gt; in Spring Batch) as well as the storage of stack traces for debugging. In the 1.1.0 release, error messages have been moved to a new field &lt;code&gt;TaskExecution#errorMessage&lt;/code&gt; so that each field has it&amp;rsquo;s own, dedicated use.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;em&gt;Updated customization options for partitioned batch jobs&lt;/em&gt; - In the 1.0.x line for Spring Cloud Task, when launching workers as tasks, there was not a way to customize the command line arguments provided to them. This is an issue in environments like CloudFoundry where you can use command line args to customize configuration without the need to re-push your app. In the new 1.1.0 release, we provide the ability to customize command line arguments via the &lt;code&gt;CommandLineArgsProvider&lt;/code&gt; which is similar in functionality to the &lt;code&gt;EnvironmentVariablesProvider&lt;/code&gt; introduced in 1.0.2.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;em&gt;External execution id persistence&lt;/em&gt; - When running a task in a cloud environment, there is typically a separate id associated with the infrastructure for the task&amp;rsquo;s execution. The id that YARN uses in the history server or the task id used by CloudFoundry are examples of these ids. Spring Cloud Task 1.1.0 now provides the ability to persist this external execution id for the ability to map one to the other.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;em&gt;Record the request of a task execution&lt;/em&gt; - When launching tasks on some form of infrastructure like Kubernetes or CloudFoundry, there can be a lag between the time the task execution is requested vs when it actually starts. Compounding this issue is the fact that if there is a problem with the platform, the task may not get launched at all. If this does occur, you&amp;rsquo;ll still want a record of the request. Spring Cloud Task 1.1.0 introduces the ability to record that a task is expected to start prior to it&amp;rsquo;s execution actually beginning. Allowing the launcher to record this request and the task itself will update it&amp;rsquo;s status accordingly.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;em&gt;Additional database support for the task repository&lt;/em&gt; - 1.1.0 introduces a community contributed schema to support DB2 as a datastore for the task repository.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#what-do-you-think" class="anchor" name="what-do-you-think"&gt;&lt;/a&gt;What do you think?&lt;/h2&gt;
+&lt;p&gt;We look forward to your feedback on these new features in &lt;a href="https://github.com/spring-cloud/spring-cloud-task/issues"&gt;Github&lt;/a&gt;, &lt;a href="http://stackoverflow.com/tags/spring-cloud-task"&gt;StackOverflow&lt;/a&gt;, or to me directly via Twitter &lt;a href="https://twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://cloud.spring.io/spring-cloud-task/"&gt;Spring Cloud Task Home&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-task"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-cloud-task/current/reference/htmlsingle/"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow for Kubernetes 1.1 RC1 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/22/spring-cloud-data-flow-for-kubernetes-1-1-rc1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Thomas Risberg</name>
+    </author>
+    <id>tag:spring.io,2016-11-22:2704</id>
+    <updated>2016-11-22T18:55:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team, I am pleased to announce the release of the first release candidate of &lt;em&gt;Spring Cloud Data Flow for Kubernetes&lt;/em&gt; 1.1.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Spring Cloud Data Flow for Kubernetes&lt;/em&gt; provides support for orchestrating long-running (streaming) and short-lived (task/batch) data microservices on Kubernetes.&lt;/p&gt;
+&lt;p&gt;The most significant change for this release can be found in the &lt;em&gt;Spring Cloud Deployer for Kubernetes&lt;/em&gt; project. Thanks to community contributions from Donovan Muller and Rémon (Ray) Sinnema, we have added support for defining volumes and volume mounts for deployed apps. We support the &lt;a href="http://kubernetes.io/docs/user-guide/volumes/#types-of-volumes"&gt;volume types&lt;/a&gt; that have a model supported by the Fabric8 Kubernetes client&amp;rsquo;s &lt;a href="https://github.com/fabric8io/kubernetes-model"&gt;kubernetes-model&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For detailed list of deployer improvements review the changes listed in the &lt;a href="https://github.com/spring-cloud/spring-cloud-deployer-kubernetes/milestone/8?closed=1"&gt;Spring Cloud Deployer for Kubernetes 1.1.0.RC1 marker&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We have also updated the provided scripts for testing the server on Google Cloud Container Engine. We now use Kafka 0.10.1 in order to support the latest 1.1 version of the &lt;a href="http://cloud.spring.io/spring-cloud-stream-app-starters/"&gt;app starters&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The 1.1.0.RC1 release builds on the recent &lt;a href="https://spring.io/blog/2016/11/09/spring-cloud-data-flow-1-1-rc1-released"&gt;1.1 RC1 release&lt;/a&gt; of the core Spring Cloud Data Flow project.&lt;/p&gt;
+&lt;p&gt;Review the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-kubernetes/milestone/8?closed=1"&gt;Spring Cloud Data Flow for Kubernetes 1.1.0.RC1 marker&lt;/a&gt; to learn more about the incremental improvements.&lt;/p&gt;
+&lt;p&gt;Docker images containing the &lt;em&gt;Spring Cloud Data Flow Server for Kubernetes&lt;/em&gt; for all releases are available from the &lt;a href="https://hub.docker.com/r/springcloud/spring-cloud-dataflow-server-kubernetes/tags/"&gt;Docker Hub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started using &lt;em&gt;Spring Cloud Data Flow for Kubernetes&lt;/em&gt; &lt;a href="http://docs.spring.io/spring-cloud-dataflow-server-kubernetes/docs/1.1.0.RC1/reference/htmlsingle/#_getting_started"&gt;follow the steps&lt;/a&gt; outlined in the reference documentation.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - November 21st, 2016</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/22/this-week-in-spring-november-21st-2016" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2016-11-22:2703</id>
+    <updated>2016-11-22T12:15:00Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m.. home! It&amp;rsquo;s Thanksgiving this week here in the states, after all. I am sure that I speak for the entire Pivotal team when I say that we are grateful for you, the most wonderful community on the planet. Thanks so much, and if you&amp;rsquo;re celebrating Thanksgiving, then happy Thanksgiving to you! When you&amp;rsquo;re finished with your meal - barely able to keep an eye open - I hope you&amp;rsquo;ll find a comfy arm chair and take in some of the content in this week&amp;rsquo;s roundup. &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the good Dr. David Syer doesn&amp;rsquo;t always do view templating, &lt;a href="https://spring.io/blog/2016/11/21/the-joy-of-mustache-server-side-templates-for-the-jvm"&gt;but when he does..&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;check out this replay of Spring Security lead Rob Winch and ninja Joe Grandja as they &lt;a href="https://spring.io/blog/2016/11/16/springone-platform-2016-replay-to-spring-security-4-1-and-beyond"&gt;look forward to Spring Security 4.1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;continuing our Spring Tips series, last week &lt;a href="https://spring.io/blog/2016/11/16/spring-tips-spring-cloud-data-flow"&gt;we looked at Spring Cloud Data Flow as a way to quickly build stream-processing solutions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Hurray! Congratulations to the Apache Geode project who just saw their &lt;a href="https://blogs.apache.org/foundation/entry/the_apache_software_foundation_announces102"&gt;project promoted to an Apache top level project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I really liked this post from Spring Cloud ninja Ryan Baxter investigating &lt;a href="https://dzone.com/articles/tracing-in-microservices-with-spring-cloud-sleuth"&gt;distributed tracing with Spring Cloud Sleuth&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;wanna start trouble? Then check out this &lt;a href="https://keyholelabs.com/2016/11/18/spring-boot-starter-for-trouble-maker-released/"&gt;interesting new Spring Boot starter for Trouble Maker&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;when companies grow up, they become cloud-native web companies, asserts &lt;a href="https://redmonk.com/jgovernor/2016/11/21/when-java-shops-grow-up-they-become-web-companies/"&gt;this interesting post from industry analysts RedMonk&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;learn how to &lt;a href="https://knes1.github.io/blog/2015/2015-10-19-streaming-mysql-results-using-java8-streams-and-spring-data.html"&gt;stream data from Spring Data repositories&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I really enjoye this post from Stormpath which shows how to &lt;a href="https://stormpath.com/blog/crud-application-react-spring-boot-user-authentication"&gt;build a Spring Boot application with a React.js-based frontend, all flawlessly secured using Stormpath&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Last week my friend Allard Buijze (lead of the CQRS-centric and Spring Boot-ified Axon Framework 3) and I looked at building CQRS applications. A Pivotal colleague said it was a nice webinar and thought our audiences might want to know more, and recommended this deep resource from Microsoft, &lt;a href="https://msdn.microsoft.com/en-us/library/jj554200.aspx"&gt;&lt;em&gt;The CQRS Journey&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the latest release of the Ceylon language, 1.3.1, has been released &lt;a href="https://ceylon-lang.org/blog/2016/11/22/ceylon-1-3-1/"&gt;and features interoperability with technologies like Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the latest release of &lt;a href="https://groups.google.com/forum/#!topic/rabbitmq-users/d9MN-fbaP_s"&gt;RabbitMQ - 3.5.8&lt;/a&gt; has been released&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>The Joy of Mustache: Server Side Templates for the JVM</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/21/the-joy-of-mustache-server-side-templates-for-the-jvm" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Dave Syer</name>
+    </author>
+    <id>tag:spring.io,2016-11-21:2701</id>
+    <updated>2016-11-21T10:46:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I don&amp;#8217;t do much server-side templating, but when I do&amp;#8230;&amp;#8203; well frankly,
+I tend to forget things. Every template language has its strengths and
+weaknesses, and they all have syntax to remember, and more frequently
+to forget. Recently I completed some work on the old
+&lt;a href="https://github.com/spring-projects/spring-petclinic"&gt;Spring Petclinic&lt;/a&gt;,
+converting it to use &lt;a href="http://www.thymeleaf.org/"&gt;Thymeleaf&lt;/a&gt; in the view
+layer, and re-organizing the code to be a bit more "modern". I enjoyed
+working with Thymeleaf 3, and found it a pleasant experience, but had
+to spend a lot of time scanning documentation and samples. Then I had
+another little project that needed some templates, and I remembered my
+fondness for &lt;a href="http://mustache.github.com"&gt;Mustache&lt;/a&gt;, which we added to
+Spring Boot back in version 1.2, and which plays an important role in
+the excellent
+&lt;a href="https://github.com/spring-projects/spring-restdocs"&gt;Spring REST
+Docs&lt;/a&gt; tool. I added &lt;code&gt;spring-boot-starter-mustache&lt;/code&gt; to my new project, and
+was up and running within seconds.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;I want to show you what a neat little tool
+&lt;a href="https://github.com/samskivert/jmustache"&gt;JMustache&lt;/a&gt; is for server side
+rendering of HTML (or anything else in plain text come to that). I
+always liked &lt;a href="http://mustache.github.com/"&gt;Mustache&lt;/a&gt; because of its
+simplicity - it&amp;#8217;s "just enough" templating - and you really couldn&amp;#8217;t
+wish for a cleaner, leaner, more lightweight library than this one, if
+you have to render templates in the JVM. There is one jar file with no
+dependencies, and it adds 78kb to your classpath, which isn&amp;#8217;t going to
+hurt anyone, and will put a smile on many faces. It has very few
+features, which is excellent for people who can&amp;#8217;t remember syntax, and
+the manual is short, comprehensive, readable, and useful.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you carry on reading, as we build up a sample application, you will
+see how to build HTML pages with Mustache, rendering static and
+dynamic content, building forms and menus, and abstracting the layout
+of the pages into separate components. The simplicity of Mustache
+shines through, and guides you to put logic in Java, keeping the
+templates as clean as possible. As a sidebar you will see how to
+secure an application with a custom login form in a slightly unusual
+but interesting way.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="sample-code"&gt;&lt;a class="anchor" href="#sample-code"&gt;&lt;/a&gt;Sample Code&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;There is some sample code following the text in
+&lt;a href="https://github.com/dsyer/mustache-sample"&gt;GitHub&lt;/a&gt;. It is a tiny Spring
+MVC application, also using Spring Security. If you want to see it
+develop in stages along with the text, you can use some tags:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;"base" is a starting point with a working application&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;"includes" creates a re-usable layout using a header and a footer&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;"layout" is a slightly more advanced implementation using a Mustache
+lambda&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;"menus" adds some more UI elements using more Spring Boot and
+Mustache features&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;At every stage you can checkout the tag and run the app. There is a
+Maven wrapper in the root of the project, so you can build and run it
+from the command line, e.g.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;$ git clone https://github.com/dsyer/mustache-sample
+$ cd mustache-sample
+$ git checkout base
+$ ./mvnw spring-boot:run&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Instead of running from the command line you can import the project
+into your favourite IDE and run the main method in the
+&lt;code&gt;DemoApplication&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The app runs on &lt;a href="http://localhost:8080" class="bare"&gt;http://localhost:8080&lt;/a&gt;, and you can authenticate with
+any username and password (even empty!). There are no real features in
+the sample app, but it does have login and logout and a home page, to
+provide some hooks to show the templating features.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="getting-started"&gt;&lt;a class="anchor" href="#getting-started"&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Spring Boot&lt;/a&gt; has
+autoconfiguration support for JMustache, so it is easy to get up and
+running with a Spring MVC application. You could generate a project
+from the &lt;a href="https://start.spring.io"&gt;Spring Initializr&lt;/a&gt;, and ask it for
+&lt;code&gt;spring-boot-starter-mustache&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Boot automatically configures a &lt;code&gt;ViewResolver&lt;/code&gt; for JMustache,
+so you can implement a home page by providing a controller that
+returns a view name, e.g.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;HomeController.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Controller
+class HomeController {
+  @GetMapping("/")
+  String home() {
+    return "index";
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With this controller, when the user visits the home page ("/") Spring
+will render a template at &lt;code&gt;classpath:/templates/index.html&lt;/code&gt;, which
+means in the directory &lt;code&gt;src/main/resources/templates&lt;/code&gt; in your
+project. For example you could drop this in and confirm that it works:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;index.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
+    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="make-the-application-secure"&gt;&lt;a class="anchor" href="#make-the-application-secure"&gt;&lt;/a&gt;Make the Application Secure&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;There&amp;#8217;s no dynamic (templated) content there yet. Let&amp;#8217;s make the app
+secure and add a login form, at which point you will need the dynamic
+content. So add &lt;code&gt;spring-cloud-starter-security&lt;/code&gt; to your dependencies
+and the home page will be automatically protected. Suppose you
+want to have a login form at "/login", so you&amp;#8217;ll need the controller:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;LoginController.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Controller
+@RequestMapping("/login")
+class LoginController {
+
+	@GetMapping
+	public String form() {
+		return "login";
+	}
+
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You will also need some basic security configuration, which you can
+add as a method in the main application, if you extend a base class
+from Spring Security:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;DemoApplication.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@SpringBootApplication
+public class DemoApplication extends WebSecurityConfigurerAdapter {
+
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http.authorizeRequests()
+          .antMatchers("/login", "/error").permitAll()
+          .antMatchers("/**").authenticated()
+        .and().exceptionHandling()
+          .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"));
+  }
+
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock note"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+this is a slightly unconventional configuration for form login,
+because it isn&amp;#8217;t using the built-in &lt;code&gt;formLogin()&lt;/code&gt;, which would
+automatically add the authentication entry point. If that&amp;#8217;s
+distracting then skip the next section and just add &lt;code&gt;.formLogin()&lt;/code&gt; to
+your configuration instead of the &lt;code&gt;exceptionHandling()&lt;/code&gt; above
+(everything after the &lt;code&gt;.and()&lt;/code&gt;)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="custom-authentication-processing-with-spring-mvc"&gt;&lt;a class="anchor" href="#custom-authentication-processing-with-spring-mvc"&gt;&lt;/a&gt;Custom Authentication Processing with Spring MVC&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Security implements form login (and everything else really)
+using a &lt;code&gt;Filter&lt;/code&gt;, so that&amp;#8217;s what you would get with the built in
+&lt;code&gt;formLogin()&lt;/code&gt; configuration. Just to make things interesting, you are
+going to do the authentication in a Spring MVC handler, enabling you
+to add some custom logic, and MVC is easier to work with than
+filters.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;So let&amp;#8217;s extend the &lt;code&gt;LoginController&lt;/code&gt; with a method to handle
+username/password authentication (it is easy to extend to more
+complicated logic). The main thing it needs to do is validate the
+input and if it is a real user, populate the &lt;code&gt;SecurityContext&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;LoginController.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@PostMapping
+public void authenticate(@RequestParam Map&amp;lt;String, String&amp;gt; map) throws Exception {
+  Authentication result = new UsernamePasswordAuthenticationToken(
+      map.get("username"), "N/A",
+      AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
+  SecurityContextHolder.getContext().setAuthentication(result);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock note"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+In this simple example there is only a "happy path" - all users are
+authenticated. Obviously this is not a very secure authentication
+process, and you would want to throw an &lt;code&gt;AuthenticationException&lt;/code&gt;,
+e.g. &lt;code&gt;BadCredentialsException&lt;/code&gt;, in a real controller. The exception
+would be handled by Spring Security.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To mimic the behaviour of the built-in Spring Security login form, you
+also need to be able to redirect to a "saved request" that the user
+tried to access before login. Spring Security has an
+&lt;code&gt;AuthenticationSuccessHandler&lt;/code&gt; abstraction for that, and a simple
+implementation that knows about the saved request. So the
+&lt;code&gt;authenticate&lt;/code&gt; method can use that (it needs the servlet request and
+response, which you can add those as method parameters, and Spring MVC
+will inject them):&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;LoginController.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;private AuthenticationSuccessHandler handler = new SavedRequestAwareAuthenticationSuccessHandler();
+
+@PostMapping
+public void authenticate(@RequestParam Map&amp;lt;String, String&amp;gt; map,
+    HttpServletRequest request, HttpServletResponse response) throws Exception {
+  // ... authenticate user from request parameters
+  handler.onAuthenticationSuccess(request, response, result);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="the-login-form"&gt;&lt;a class="anchor" href="#the-login-form"&gt;&lt;/a&gt;The Login Form&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Now you are ready to accept authentication requests, you need a form for
+users to fill in and submit. The &lt;code&gt;LoginController&lt;/code&gt; renders the "login"
+template, so you need to add a "login.html" to your templates
+folder. For example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;login.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;h1&amp;gt;Login&amp;lt;/h1&amp;gt;
+  &amp;lt;form action="/login" method="post"&amp;gt;                            &lt;b class="conum"&gt;(1)&lt;/b&gt;
+    &amp;lt;label for="username"&amp;gt;Username:&amp;lt;/label&amp;gt;
+    &amp;lt;input type="text" name="username" /&amp;gt;                         &lt;b class="conum"&gt;(2)&lt;/b&gt;
+    &amp;lt;label for="password"&amp;gt;Password:&amp;lt;/label&amp;gt;
+    &amp;lt;input type="password" name="password" /&amp;gt;                     &lt;b class="conum"&gt;(3)&lt;/b&gt;
+    &amp;lt;input type="hidden" name="_csrf" value="{{_csrf.token}}" /&amp;gt;  &lt;b class="conum"&gt;(4)&lt;/b&gt;
+    &amp;lt;button type="submit" class="btn btn-primary"&amp;gt;Submit&amp;lt;/button&amp;gt;
+  &amp;lt;/form&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="colist arabic"&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;a form, with a submit button to send the contents to "POST /login"&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;username field input&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;password field input&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CSRF token, in the format required by Spring Security.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The CSRF token is your first piece of dynamic content, and it shows
+you how Mustache works, and incidentally why it is called
+"Mustache". Variables from the "context" (in this case the Spring MVC
+model object) can be rendered using double braces, or "mustaches"
+(&lt;code&gt;{{&lt;/code&gt; and &lt;code&gt;}}&lt;/code&gt;). JMustache also navigates the object graph inside
+variables, so &lt;code&gt;_csrf.token&lt;/code&gt; resolves as the "token" property of the
+"_csrf" object.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Security puts the "_csrf" object into request attributes. To
+get it copied to the MVC model you need a setting in your
+&lt;code&gt;application.properties&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;application.properties&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;spring.mustache.expose-request-attributes=true&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With all that in place, you should find that on visiting the
+application in a browser will first redirect to "/login". Because of
+the weak (non-existent) authentication logic in your handler, you can
+put anything you like in the form and submit it to see the home page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock note"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Note&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+in the sample app we have some stylesheets imported via webjars
+to make the app look a little bit nicer, but they don&amp;#8217;t add anything
+to the functionality.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The sample code has a "base" tag which is an application with all the
+features we have seen so far.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="layout-abstractions-using-includes"&gt;&lt;a class="anchor" href="#layout-abstractions-using-includes"&gt;&lt;/a&gt;Layout Abstractions: Using Includes&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;There are only 2 pages in our application, but even with such a small
+code base there is going to be a quite a bit of duplication in the
+HTML. It is useful to extract some common elements of all pages into
+re-usable templates. One way to do this is with "includes". So we
+could extract the top matter and bottom matter into "header.html":&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;header.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+&amp;lt;body&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;and "footer.html"&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;footer.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;(These are intentionally trivial examples. In a real app they would
+probably have a lot of stylesheets, scripts, and meta tags.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With those templates we can re-write the home page:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;index.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{&amp;gt;header}}
+    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
+    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;
+{{&amp;gt;footer}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;and the login form would look similar (just the body of the HTML). In
+these examples you can see the Mustache syntax for "includes", which
+is a bit like a variable, but with an extra "&amp;gt;" in the opening
+tag. The name of the template is resolved in the same way as the view
+templates (so "footer" is mapped to "footer.html" in the "templates"
+directory).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="natural-templates"&gt;&lt;a class="anchor" href="#natural-templates"&gt;&lt;/a&gt;"Natural" Templates&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Some people like to use HTML templates that render on their own and
+can be viewed in a browser. It&amp;#8217;s kind of neat to be able to edit the
+templates and be able to see the result independent of any server or
+application logic. Mustache isn&amp;#8217;t a perfect language for such
+"natural" templates, but it does have one feature that you can use to
+get something approximating it. That feature is "comments".&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;So, for example, you could add a static header and footer to your home
+page template, so that it renders in the browser (almost) as if it was
+in the application. Just surround the static content with Mustache
+comment tags (&lt;code&gt;{{!&lt;/code&gt; and &lt;code&gt;}}&lt;/code&gt;). For example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;index.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{!
+&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+&amp;lt;body&amp;gt;
+}}
+{{&amp;gt;header}}
+    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
+    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;
+{{&amp;gt;footer}}
+{{!
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The browser will still render the Mustache tags as literal braces, but
+you can squint and ignore those, and the rest of the content will be
+layed out exactly as it would be in the application. Obviously, with
+such basic content there isn&amp;#8217;t a huge benefit, but when the content is
+more complex and has styling and scripts it might make more sense.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The sample code has a tag in GitHub called "includes", which is an
+application with all the features we have seen so far.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="layout-abstractions-using-a-lambda"&gt;&lt;a class="anchor" href="#layout-abstractions-using-a-lambda"&gt;&lt;/a&gt;Layout Abstractions: Using a Lambda&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Some people will be perfectly happy with a header and a footer in
+separate templates, but others will moan. To be honest it does feel a
+little awkward to be laying out hierarchical content (HTML), and be
+forced to break elements (like the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag in the sample) across
+multiple files. It would be nicer if we could control the layout in a
+single file, something like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;layout.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+&amp;lt;body&amp;gt;
+  {{{layout.body}}}
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;and then somehow generate the "body" content in our home page and
+login page.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Mustache allows you to insert generic "executable" content into your
+templates. This is a really powerful feature, and you can use it to
+extract the layout into its own template, as well as to do other
+things that involve a bit of logic. The syntax for that is a generic
+Mustache tag that resolves to something executable. The home
+page would look something like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;index.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}
+    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
+    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;\
+{{/layout}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To make this work you first need an object called "layout" of type
+&lt;code&gt;Mustache.Lambda&lt;/code&gt; in our MVC model. You could do this in your
+controller methods, or (better) use a &lt;code&gt;@ControllerAdvice&lt;/code&gt; to add model
+attributes to all views. For example:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;LayoutAdvice.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@ControllerAdvice
+class LayoutAdvice {
+
+  @ModelAttribute("layout")
+  public Mustache.Lambda layout() {
+    return new Layout();
+  }
+
+}
+
+class Layout {
+  String body;
+  @Override
+  public void execute(Fragment frag, Writer out) throws IOException {
+    body = frag.execute();
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Notice that the "layout" attribute renders its body using
+&lt;code&gt;Fragment.execute()&lt;/code&gt; and assigns it to a property called "body", which
+can be referenced as a variable in Mustache. The "layout.html"
+template already contains the code to pull in the body,
+&lt;code&gt;{{{layout.body}}}&lt;/code&gt;, so all that remains is to actually render the
+layout (so far we have only rendered the body). We can do this, in a
+first pass, by importing the layout explicitly into the home
+page:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;index.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}
+    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
+    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;\
+{{/layout}}
+{{&amp;gt;layout}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Do the same with the login template:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;login.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}
+  &amp;lt;h1&amp;gt;Login&amp;lt;/h1&amp;gt;
+  &amp;lt;form action="/login" method="post"&amp;gt;
+    &amp;lt;label for="username"&amp;gt;Username:&amp;lt;/label&amp;gt;
+    &amp;lt;input type="text" name="username" /&amp;gt;
+    &amp;lt;label for="password"&amp;gt;Password:&amp;lt;/label&amp;gt;
+    &amp;lt;input type="password" name="password" /&amp;gt;
+    &amp;lt;input type="hidden" name="_csrf" value="{{_csrf.token}}" /&amp;gt;
+    &amp;lt;button type="submit" class="btn btn-primary"&amp;gt;Submit&amp;lt;/button&amp;gt;
+  &amp;lt;/form&amp;gt;
+{{/layout}}
+{{&amp;gt;layout}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;and you are good to go. Everything works, and the app shows the login page and home page with the same layout.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="admonitionblock tip"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td class="icon"&gt;
+&lt;div class="title"&gt;Tip&lt;/div&gt;
+&lt;/td&gt;
+&lt;td class="content"&gt;
+you might have noticed the triple mustaches (&lt;code&gt;{{{&lt;/code&gt; and &lt;code&gt;}}}&lt;/code&gt;) in
+the "layout.html". This is a JMustache feature: all content is escaped
+by default, but this content is going to be rendered twice, so we only
+need it escaped the first time, so we use triple mustaches.
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="rendering-the-layout-in-the-lambda"&gt;&lt;a class="anchor" href="#rendering-the-layout-in-the-lambda"&gt;&lt;/a&gt;Rendering the Layout in the Lambda&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;To remove the need for the explicit &lt;code&gt;{{&amp;gt;layout}}&lt;/code&gt; include in every
+page that uses &lt;code&gt;{{#layout}}&lt;/code&gt;, you can do that part inside the
+lambda. You&amp;#8217;ll need a reference to the Mustache compiler, and then you
+just need to compile a template which includes the layout and execute
+it:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;Layout.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Layout implements Mustache.Lambda {
+
+  String body;
+
+  private Compiler compiler;
+
+  public Layout(Compiler compiler) {
+    this.compiler = compiler;
+  }
+
+  @Override
+  public void execute(Fragment frag, Writer out) throws IOException {
+    body = frag.execute();
+    compiler.compile("{{&amp;gt;layout}}").execute(frag.context(), out);
+  }
+
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The compiler is wired into the &lt;code&gt;Layout&lt;/code&gt; in its constructor, and it can
+be injected into the controller advice using &lt;code&gt;@Autowired&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;LayoutAdvice.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@ControllerAdvice
+class LayoutAdvice {
+	private final Mustache.Compiler compiler;
+
+	@Autowired
+	public LayoutAdvice(Compiler compiler) {
+		this.compiler = compiler;
+	}
+
+	@ModelAttribute("layout")
+	public Mustache.Lambda layout(Map&amp;lt;String, Object&amp;gt; model) {
+		return new Layout(compiler);
+	}
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;That&amp;#8217;s it. You can remove the include from the view
+templates. E.g. this works for the home page:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;index.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}
+    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
+    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;\
+{{/layout}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The last line of the old version of the template has effectively been
+moved into the &lt;code&gt;Layout&lt;/code&gt; lambda.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="more-dynamic-content"&gt;&lt;a class="anchor" href="#more-dynamic-content"&gt;&lt;/a&gt;More Dynamic Content&lt;/h3&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It&amp;#8217;s quite common for layout templates like the one that we are
+developing to have content that varies between uses. For instance you
+might want the "title" on the home page to be different to that on the
+login page, but it is part of the HTML header, not the body, so
+logically it is part of the layout. Let&amp;#8217;s make that explicit, by
+adding the title to the header of the layout:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;layout.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;title&amp;gt;{{{layout.title}}}&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  {{{layout.body}}}
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This is a strong hint about how you can implement this feature: the
+layout has a new property called "title", and you can give it a
+default value in the class declaration:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;Layout.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Layout implements Mustache.Lambda {
+
+  String body;
+
+  String title = "Demo Application";
+
+  ...
+
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Now, all that remains is to populate that property. Logically, setting
+the title is part of the page view, not the layout, so you&amp;#8217;d like to
+set it in the same place you declare the rest of the page
+content. Other template languages have "parameterised fragments", but
+Mustache is too minimalistic for that. The minimalism is a feature,
+and actually it leads to quite an elegant solution to this
+problem.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;All you have is tags, so you might want to do something like this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;index.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}{{#title}}Home Page{{/title}}
+    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
+    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;\
+{{/layout}}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;That looks like it might work. All you need to do is provide a lambda
+to capture the title. In the layout advice you can do this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;LayoutAdvice.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@ControllerAdvice
+class LayoutAdvice {
+
+  ...
+
+  @ModelAttribute("title")
+  public Mustache.Lambda defaults(@ModelAttribute Layout layout) {
+    return (frag, out) -&amp;gt; {
+      layout.title = frag.execute();
+    };
+  }
+
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;and as long as the call to &lt;code&gt;{{#title}}&lt;/code&gt; is nested inside the call to
+&lt;code&gt;{{#layout}}&lt;/code&gt; everything will work out just fine. You cleaned up your
+templates and moved a tiny piece of logic to Java, where it belongs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The sample code is tagged with "layout" at this point, if you want to
+check it out and compare notes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="logout-menus-and-spring-boot-configuration"&gt;&lt;a class="anchor" href="#logout-menus-and-spring-boot-configuration"&gt;&lt;/a&gt;Logout: Menus and Spring Boot Configuration&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You can load a home page and log into your application using a
+form. The user can&amp;#8217;t yet log out, so you probably want to add that
+feature, ideally as a link on all pages, so that makes it part of the
+layout. To show how that works, let&amp;#8217;s add a generic, declarative menu
+bar to the application, and make one part of it a logout button.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The logout link is actually pretty easy. We only need a form with the
+CSRF token and a link to submit it, e.g:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;layout.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;title&amp;gt;{{{layout.title}}}&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;form id="logout" action="/logout" method="post"&amp;gt;
+    &amp;lt;input type="hidden" name="_csrf" value="{{_csrf.token}}" /&amp;gt;
+    &amp;lt;button type="submit" class="btn btn-primary"&amp;gt;Logout&amp;lt;/button&amp;gt;
+  &amp;lt;/form&amp;gt;
+  {{{layout.body}}}
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;That already should work. But lets incorporate the logout into a more
+generic set of menu links. A list of elements in HTML can be
+represented as a &lt;code&gt;&amp;lt;ul/&amp;gt;&lt;/code&gt; with nested &lt;code&gt;&amp;lt;li/&amp;gt;&lt;/code&gt;, so the menus for your
+application can be rendered that way. In Mustache you do iteration
+just like lambdas, using a tag, so let&amp;#8217;s invent a new one called
+&lt;code&gt;{{#menus}}&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;layout.html&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang="en"&amp;gt;
+&amp;lt;head&amp;gt;
+  &amp;lt;title&amp;gt;{{{layout.title}}}&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+  &amp;lt;ul class="nav nav-pills" role="tablist"&amp;gt;
+    {{#menus}}&amp;lt;li&amp;gt;&amp;lt;a href="{{path}}"&amp;gt;{{name}}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;{{/menus}}
+    &amp;lt;li&amp;gt;&amp;lt;a href="#" onclick="document.getElementById('#logout').submit()"&amp;gt;Logout&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  &amp;lt;/ul&amp;gt;
+  {{{layout.body}}}
+  &amp;lt;form id="logout" action="/logout" method="post"&amp;gt;
+    &amp;lt;input type="hidden" name="_csrf" value="{{_csrf.token}}" /&amp;gt;
+  &amp;lt;/form&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Notice that inside the &lt;code&gt;{{#menus}}&lt;/code&gt; tag we pull out variables, "name"
+and "path" using the normal Mustache syntax.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Now you have to define the tag in your controller advice (or
+equivalently in the controllers), so that "menus" resolves to an
+iterable:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;LayoutAdvice.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@ModelAttribute("menus")
+public Iterable&amp;lt;Menu&amp;gt; menus() {
+  return application.getMenus();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;So this new code introduced a &lt;code&gt;Menu&lt;/code&gt; type that contains the static
+content for each menu in the UI. The layout calls for "name" and
+"path", so you need those properties:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;Menu.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Menu {
+  private String name;
+  private String path;
+  // ... getters and setters
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In the layout advice above the menus came from an &lt;code&gt;application&lt;/code&gt;
+object. That wasn&amp;#8217;t strictly necessary: you could have declared the
+list of menus inline in the &lt;code&gt;menus()&lt;/code&gt; method, but extracting it into
+another object gives us the chance to use a nice Spring Boot feature,
+where we can declare the menus in a config file in a compact format.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;So now you need to create the &lt;code&gt;Application&lt;/code&gt; object to hold the menus,
+and inject it into the layout advice:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;Layout.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;private Application application;
+
+@Autowired
+public LayoutAdvice(Compiler compiler, Application application) {
+  this.compiler = compiler;
+  this.application = application;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;where in &lt;code&gt;Application&lt;/code&gt; you have something like this&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;Application.java&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;@Component
+@ConfigurationProperties("app")
+class Application {
+  private List&amp;lt;Menu&amp;gt; menus = new ArrayList&amp;lt;&amp;gt;();
+  // .. getters and setters
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;@ConfigurationProperties&lt;/code&gt; tells Spring Boot to bind to this bean
+from the environment. Switching from &lt;code&gt;application.properties&lt;/code&gt; to
+&lt;code&gt;application.yml&lt;/code&gt; you could create a "Home" and a "Login" menu like
+this:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="title"&gt;application.yml&lt;/div&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;app.menus:
+  - name: Home
+    path: /
+  - name: Login
+    path: /login&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;With this in place, the "layout.html" that you already defined now has
+all it needs to work.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The sample code is tagged with "menus" at this point in github, if you
+want to check it out and compare notes. It&amp;#8217;s also the final state, so
+it&amp;#8217;s the same code in master, possibly with bug fixes and updates to
+libraries. I hope you enjoy using Mustache as much as I do.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="footnote"&gt;&lt;a class="anchor" href="#footnote"&gt;&lt;/a&gt;Footnote&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The sample has one or two extra features on top of the code in the
+text. One of which is that the "active" menu is rendered differently
+to the others using a CSS style. For that to work, you need to add a
+flag to the &lt;code&gt;Menu&lt;/code&gt; and reset it in the layout advice. The logic is
+natural and easy to add to the advice. Another is that the title for
+the page is part of the menu definition instead of being a separate
+lambda.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: To Spring Security 4.1 and Beyond</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/16/springone-platform-2016-replay-to-spring-security-4-1-and-beyond" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-11-16:2699</id>
+    <updated>2016-11-16T12:22:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speakers: Rob Winch, Joe Grandja&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/to-spring-security-41-and-beyond"&gt;http://www.slideshare.net/SpringCentral/to-spring-security-41-and-beyond&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Exploits are continually evolving making security hard. This is compounded by the fact that the technologies we need to secure are a moving target.&lt;/p&gt;
+&lt;p&gt;In this talk we will discuss how to easily secure an application with Spring Security 4.1. We will focus on some of the new features found in Spring Security 4.1 and discuss the future direction of Spring Security.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/H94Wbd8ARKM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tips: Spring Cloud Data Flow</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/16/spring-tips-spring-cloud-data-flow" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2016-11-03:2679</id>
+    <updated>2016-11-16T01:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! In this tip, we&amp;rsquo;ll quickly look at how to build stream-processing pipelines with Spring Cloud Data Flow&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/GaHgRw-3K84" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - November 15th, 2016</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/15/this-week-in-spring-november-15th-2016" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2016-11-15:2696</id>
+    <updated>2016-11-15T20:26:00Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! Time sure is flying! We&amp;rsquo;ve got so much to get into this week. Can you believe we&amp;rsquo;re staring down 2017? We&amp;rsquo;ve got so much to cover so let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I hope you&amp;rsquo;ll join Axon-framework lead Allard Buijze and I tomorrow when we introduce &lt;a href="https://spring.io/blog/2016/10/25/webinar-bootiful-cqrs-with-axon-nov-16"&gt;how to build CQRS-centric applications with the Axon Framework and Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;More SpringOne Platform 2016 talks are available, and if you&amp;rsquo;re interested in how Spring and reactive programming are coming together you&amp;rsquo;ll want to hear directly from Rossen about &lt;a href="https://spring.io/blog/2016/11/15/springone-platform-2016-replay-from-imperative-to-reactive-web-apps"&gt;where the team is starting it&amp;rsquo;s journey!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Anyone that is working in microservices, should watch this &lt;em&gt;amazing&lt;/em&gt; SpringOne Platform 2016 replay showing us how &lt;a href="https://spring.io/blog/2016/11/15/springone-platform-2016-replay-ddd-rest-domain-driven-apis-for-the-web"&gt;Oliver Gierke applies Domain Driven Design concepts to creating REST APIs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;be sure to check out this blog and the corresponding webinar from our very own Stephane Nicoll and Vaadin&amp;rsquo;s Matti Tahvonen as they look at how to &lt;a href="https://spring.io/blog/2016/11/15/vaadin-spring-1-1-build-web-uis-that-hook-right-to-your-java-backend"&gt;build a good looking web application user interface that integrates seamlessly with your backend Spring services&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring IO Platform lead Andy Wilkinson has just &lt;a href="https://spring.io/blog/2016/11/14/spring-io-platform-athens-sr1"&gt;released Spring IO Platform Athens SR1&lt;/a&gt; featuring lots of updates&lt;/li&gt;
+  &lt;li&gt;Spring Data Geode lead John Blum just released &lt;a href="https://spring.io/blog/2016/11/10/spring-data-geode-1-0-0-incubating-release-released"&gt;Spring Data Geode 1.0.0.INCUBATING-RELEASE Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Security lead Rob Winch &lt;a href="https://spring.io/blog/2016/11/10/spring-security-4-2-0-released"&gt;just announced Spring Security 4.2.0&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Spring Cloud Data Flow co-founder &lt;a href="https://spring.io/blog/2016/11/09/spring-cloud-data-flow-1-1-rc1-released"&gt;Dr. Mark Pollack just announced Spring Cloud Data Flow 1.1 RC1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;last week, in another installment of the Spring Tips series, we looked at how to build &lt;a href="https://spring.io/blog/2016/11/09/spring-tips-spring-cloud-stream"&gt;messaging-based microservices using Spring Cloud Stream&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Geode lead John Blum just released &lt;a href="https://spring.io/blog/2016/11/08/spring-boot-1-4-2-available-no"&gt;Spring Data Geode 1.0.0.INCUBATING-RELEASE Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;want to learn about event-sourcing? Take a look &lt;a href="https://spring.io/blog/2016/11/08/cqrs-and-event-sourcing-with-jakub-pilimon"&gt;at this groovy recorded Google Hangout with Jakub Pilimon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Integration and Spring AMQP lead Gary Russell just &lt;a href="https://spring.io/blog/2016/11/08/spring-amqp-and-spring-integration-core-java-dsl-maintenance-releases-available"&gt;announced Spring AMQP and Spring Integration Core &amp;amp; Java DSL Maintenance Releases Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring framework lead and maestro Juergen Hoeller just announced &lt;a href="https://spring.io/blog/2016/11/08/spring-framework-5-0-m3-released"&gt;&lt;br/&gt;Spring Framework 5.0 M3 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Create a new &lt;a href="https://github.com/atomist-project-templates/spring-cloud-config-server"&gt;Spring Cloud Config Server&lt;/a&gt; with this powerful new &lt;a href="http://atomist.com"&gt;Atomist&lt;/a&gt; generator&lt;/li&gt;
+  &lt;li&gt;I&amp;rsquo;ve heard &lt;a href="https://twitter.com/craigburke1/status/798574551156326400"&gt;good things&lt;/a&gt; about &lt;a href="https://github.com/alvarosanchez/grails-spring-security-rest"&gt;Alvaro Sanchez&amp;rsquo;s Grails Spring Security REST plugin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Nice to see Spring Boot retain its &lt;a href="https://www.thoughtworks.com/radar/languages-and-frameworks/spring-boot"&gt;spot in the &lt;em&gt;Adopt&lt;/em&gt; column in the latest installment of the Thougthworks Radar&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;this Japanese-language post looks &lt;a href="http://kimulla.hatenablog.com/entry/2016/05/08/SpringSecurity_%E6%A8%A9%E9%99%90%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%84%E3%81%A6%E8%AA%8D%E5%8F%AF%E5%87%A6%E7%90%86%E3%82%92%E3%81%99%E3%82%8B"&gt;like it does a good job introducing Spring Security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;this isn&amp;rsquo;t Spring-specific at all, but given that we&amp;rsquo;ve got a lot of other content this week on event-sourcing and bounded contexts and microservices, &lt;a href="http://www.russmiles.com/essais/going-events-first-for-microservices-with-event-storming-and-ddd"&gt;you might appreciate Russ Miles&amp;rsquo; latest musings on event-sourcing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;be sure to join this webinar from Tino Tereshko (big data lead, Google) and Joshua McKenty (senior director, platform engineering at Pivotal) on how to use &lt;a href="http://pivotal.io/platform/webinar/pivotal-cloud-foundry-and-google-bigquery-cloud-vision-api-10am"&gt;Google&amp;rsquo;s BigQuery API from within Pivotal Cloud Foundry running on Google Compute Engine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: DDD &amp; REST - Domain Driven APIs for the web</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/15/springone-platform-2016-replay-ddd-rest-domain-driven-apis-for-the-web" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-11-15:2697</id>
+    <updated>2016-11-15T12:57:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/ddd-rest-domain-driven-apis-for-the-web"&gt;http://www.slideshare.net/SpringCentral/ddd-rest-domain-driven-apis-for-the-web&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;While Domain Driven Design is supposed to take care of complexity in the very core of software, REST is usually treated a plain remoting technology. In this talk we&amp;rsquo;re going to explore some commonalities of the two when it comes to the design of both the domain and resources. We&amp;rsquo;re going to discover how a good domain design is essential to build a great REST API in the first place and which means REST provides to make your APIs more domain driven. From all of the building blocks of DDD, the talk identifies the ones most important when it comes to building a good REST API: we&amp;rsquo;re going to look at aggregates as natural boundaries for representations, repositories as the backing foundation for collection resources and how hypermedia allows to make domain specific state transitions explicit.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/NdZqeAAIHzc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: From Imperative To Reactive Web Apps</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/15/springone-platform-2016-replay-from-imperative-to-reactive-web-apps" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-11-15:2698</id>
+    <updated>2016-11-15T12:56:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Rossen Stoyanchev&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/imperative-to-reactive-web-applications"&gt;http://www.slideshare.net/SpringCentral/imperative-to-reactive-web-applications&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The reactive programming model involves a fundamental shift from imperative to non-blocking logic and understanding what that means on the most basic level is an essential and required first step. In this talk we&amp;rsquo;ll start by introducing reactive programming and discuss how it impacts application design. Then we&amp;rsquo;ll take a look at the building blocks from a Java developer&amp;rsquo;s perspective. Finally we&amp;rsquo;ll complete the picture by checking out the upcoming Spring 5 support for reactive web applications.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/a4CxFyZRpyc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>Vaadin Spring 1.1 - build web UIs that hook right to your Java backend</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/15/vaadin-spring-1-1-build-web-uis-that-hook-right-to-your-java-backend" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2016-11-15:2695</id>
+    <updated>2016-11-15T11:01:06Z</updated>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This post is a guest post by community member &lt;a href="https://twitter.com/MattiTahvonen"&gt;Matti Tahvonen (@MattiTahvonen)&lt;/a&gt;, who works as a developer advocate in &lt;a href="https://vaadin.com"&gt;Vaadin Ltd&lt;/a&gt;, the company that originally developed Vaadin Framework and provides commercial services and extensions for it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The first stable release of the official Spring integration library for Vaadin was released a bit over a year ago. The feedback has been great and many Spring developers, who have wanted to stay on the safe “backend side”, have discovered a new way to use their existing Java skills to build good-looking web UIs. Using Vaadin Spring, your UI code lives in Spring managed beans and the integration with your Spring based backend becomes trivial.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://vaadin.com/blog/-/blogs/vaadin-spring-1-1-is-out"&gt;Vaadin Spring 1.1&lt;/a&gt; is a first feature release and was published last week. It provides a handy &lt;code&gt;SpringNavigator&lt;/code&gt; (auto-configure in Spring Boot apps), which makes it easier to create “top level navigation” for your larger Vaadin Spring-based UI. Vaadin Spring 1.1.0 and previous 1.0.x releases have also fixed a number of bugs, so existing Vaadin Spring users should definitely upgrade their versions.&lt;/p&gt;
+&lt;p&gt;If you are new to Vaadin or want some handy Spring tips, you should definitely also check out our recent joint webinar “Java web apps with Spring and Vaadin”, hosted by Stéphane Nicoll (Pivotal) and Matti Tahvonen (Vaadin). In addition to Vaadin related stuff, the webinar contains a bunch of productivity tips related to devtools, consuming RESTful services and maintaining your database structure using Flyway. The sample app that we used is also &lt;a href="https://github.com/mstahv/spring-data-vaadin-crud"&gt;available on github&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/6FjjVKmEdY4" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;If you are more of a “learn by doing” type of person and got interested in using Vaadin Framework in your Spring web app, refer to &lt;a href="https://vaadin.com/spring"&gt;vaadin.com/spring&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring IO Platform Athens-SR1</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/14/spring-io-platform-athens-sr1" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2016-11-14:2694</id>
+    <updated>2016-11-14T16:18:44Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that &lt;a href="http://platform.spring.io/platform"&gt;Spring IO Platform&lt;/a&gt; Athens-SR1 is now available from both &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3Aio.spring.platform"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This maintenance release upgrades the versions of a number of the projects in the Platform:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring AMQP 1.6.5.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Boot 1.4.2.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Data Hopper SR5&lt;/li&gt;
+  &lt;li&gt;Spring Framework 4.3.4.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Integration 4.3.5.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Security OAuth 2.0.12.RELEASE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The versions of a number of third-party dependencies have also been updated.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/platform/docs/Athens-SR1/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Data Geode 1.0.0.INCUBATING-RELEASE Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/10/spring-data-geode-1-0-0-incubating-release-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>John Blum</name>
+    </author>
+    <id>tag:spring.io,2016-11-08:2690</id>
+    <updated>2016-11-10T18:08:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the &lt;em&gt;Spring&lt;/em&gt; and &lt;em&gt;Apache Geode&lt;/em&gt; communities, I am extremely pleased and excited to announce the release of &lt;em&gt;Spring Data&lt;/em&gt; for &lt;a href="http://geode.incubator.apache.org/releases/"&gt;Apache Geode 1.0.0-incubating&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can get the bits from &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cspring-data-geode"&gt;Maven Central&lt;/a&gt; by including the following dependency in either your application Maven POM or Gradle build file&amp;hellip;&lt;/p&gt;&lt;h4&gt;&lt;a href="#maven" class="anchor" name="maven"&gt;&lt;/a&gt;Maven&lt;/h4&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.data&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-data-geode&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;1.0.0.INCUBATING-RELEASE&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a href="#gradle" class="anchor" name="gradle"&gt;&lt;/a&gt;Gradle&lt;/h4&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;compile &amp;#39;org.springframework.data:spring-data-geode:1.0.0.INCUBATING-RELEASE&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Including the &lt;code&gt;spring-data-geode&lt;/code&gt; dependency will transitively pull in all required &lt;em&gt;Apache Geode&lt;/em&gt; artifacts so you can start building &lt;em&gt;Spring&lt;/em&gt; applications that use &lt;em&gt;Apache Geode&lt;/em&gt; now.&lt;/p&gt;&lt;h4&gt;&lt;a href="#note" class="anchor" name="note"&gt;&lt;/a&gt;NOTE:&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;I changed the version qualifier again by removing the &lt;code&gt;APACHE-GEODE&lt;/code&gt; qualification and simplifying to &lt;code&gt;INCUBATING-RELEASE&lt;/code&gt;. Once &lt;em&gt;Apache Geode&lt;/em&gt; graduates, the &lt;code&gt;INCUBATING&lt;/code&gt; qualification will drop off as well and the version number will simply become &lt;code&gt;major.minor.maint.[M#|R#|RELEASE]&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h1&gt;&lt;a href="#what-rsquo-s-new" class="anchor" name="what-rsquo-s-new"&gt;&lt;/a&gt;What&amp;rsquo;s New&lt;/h1&gt;
+&lt;p&gt;Both &lt;em&gt;Spring Data Geode&lt;/em&gt; &lt;strong&gt;1.0.0.INCUBATING-RELEASE&lt;/strong&gt; and &lt;em&gt;Apache Geode&lt;/em&gt; &lt;strong&gt;1.0.0-incubating&lt;/strong&gt; release are significant for several reasons.&lt;/p&gt;
+&lt;p&gt;First and foremost, this marks the first, &lt;a href="http://markmail.org/message/5p4kx6akynrt6cvo"&gt;official GA release&lt;/a&gt; of &lt;a href="http://geode.incubator.apache.org/"&gt;Apache Geode&lt;/a&gt; inside the &lt;em&gt;Apache Software Foundation&lt;/em&gt; (ASF). This is a massive step forward not only to signify the maturity of Geode, which is rooted in over a decade of production experience that is &lt;a href="https://pivotal.io/big-data/pivotal-gemfire"&gt;Pivotal GemFire&lt;/a&gt;, but also accelerates it&amp;rsquo;s graduation as a Top-Level Project (TLP) inside ASF.&lt;/p&gt;
+&lt;p&gt;But, that&amp;rsquo;s not all!&lt;/p&gt;&lt;h1&gt;&lt;a href="#security" class="anchor" name="security"&gt;&lt;/a&gt;Security!&lt;/h1&gt;
+&lt;p&gt;This release also incorporates significant changes to the security model of &lt;em&gt;Apache Geode&lt;/em&gt; by introducing a &lt;strong&gt;new&lt;/strong&gt;, &lt;a href="http://geode.incubator.apache.org/docs/guide/managing/security/chapter_overview.html"&gt;&lt;em&gt;Integrated Security&lt;/em&gt; framework&lt;/a&gt; (some technical details &lt;a href="https://cwiki.apache.org/confluence/display/GEODE/Geode+Integrated+Security"&gt;here&lt;/a&gt;) that not only includes secure transport (i.e. SSL) but authentication and authorization as well.&lt;/p&gt;
+&lt;p&gt;This is significant because &lt;em&gt;Apache Geode&lt;/em&gt; is one of the few OSS IMDG options to offer Security without an Enterprise license!&lt;/p&gt;
+&lt;p&gt;One of the best things about this new feature is that it is a &lt;em&gt;framework&lt;/em&gt; allowing different security providers to be plugged in. Out-of-the-box, Geode is built on &lt;a href="http://shiro.apache.org/"&gt;Apache Shiro&lt;/a&gt;, which provides a familiar and robust way to configure security not only for Geode, but your applications as well.&lt;/p&gt;&lt;h1&gt;&lt;a href="#how-to-secure-apache-geode" class="anchor" name="how-to-secure-apache-geode"&gt;&lt;/a&gt;How-To Secure Apache Geode&lt;/h1&gt;
+&lt;p&gt;Without &lt;em&gt;Spring (Data Geode)&lt;/em&gt;, &lt;em&gt;Apache Geode&lt;/em&gt; provides its own options for configuring security.&lt;/p&gt;
+&lt;p&gt;One option is to implement the &lt;em&gt;Apache Geode&lt;/em&gt; &lt;a href="http://geode.incubator.apache.org/releases/latest/javadoc/org/apache/geode/security/SecurityManager.html"&gt;SecurityManager&lt;/a&gt; interface and &lt;a href="http://geode.incubator.apache.org/docs/guide/managing/security/enable_security.html"&gt;set&lt;/a&gt; the corresponding Geode &lt;code&gt;security-manager&lt;/code&gt; (System) properly to the fully-qualified class name. An example of this can be seen &lt;a href="https://cwiki.apache.org/confluence/display/GEODE/Using+Custom+SecurityManager"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But, using a property to reference a FQCN severely limits how you configure the &lt;code&gt;SecurityManager&lt;/code&gt; in a managed environment or test context. Per my feedback, this will be &lt;a href="https://issues.apache.org/jira/browse/GEODE-2030"&gt;addressed&lt;/a&gt; in a later Geode release.&lt;/p&gt;
+&lt;p&gt;Another option is to use &lt;em&gt;Apache Geode&amp;rsquo;s&lt;/em&gt; &lt;code&gt;security-shiro-init&lt;/code&gt; (System) property to specify an &lt;a href="http://shiro.apache.org/configuration.html#Configuration-INIConfiguration"&gt;INI configuration file&lt;/a&gt; located in a designated &lt;a href="http://shiro.apache.org/configuration.html#securitymanager-from-an-ini-resource"&gt;resource path&lt;/a&gt; supported by &lt;em&gt;Apache Shiro&lt;/em&gt;. However, this is limiting for 2 reasons.&lt;/p&gt;
+&lt;p&gt;First, &lt;em&gt;Apache Geode&lt;/em&gt; only supports the &lt;code&gt;classpath:&lt;/code&gt; resource specifier at present (also being &lt;a href="https://issues.apache.org/jira/browse/GEODE-2054"&gt;addressed&lt;/a&gt; by the Geode engineering team). Second, having to learn yet another configuration file format, no matter how &lt;a href="https://en.wikipedia.org/wiki/INI_file"&gt;standard&lt;/a&gt;, is well, no better than XML, IMO.&lt;/p&gt;
+&lt;p&gt;Of course, &lt;em&gt;Apache Shiro&lt;/em&gt; tries to alleviate the pain when running in a &lt;em&gt;Spring&lt;/em&gt; context by offering &lt;a href="http://shiro.apache.org/spring.html"&gt;this&lt;/a&gt;. But, there is still too much boilerplate configuration logic left to be desired.&lt;/p&gt;&lt;h1&gt;&lt;a href="#how-to-secure-apache-geode-with-spring-data-geode" class="anchor" name="how-to-secure-apache-geode-with-spring-data-geode"&gt;&lt;/a&gt;How-To Secure Apache Geode with Spring (Data Geode)&lt;/h1&gt;
+&lt;p&gt;In the spirit of making &lt;em&gt;Apache Geode&lt;/em&gt; &lt;strong&gt;quick&lt;/strong&gt; and as &lt;strong&gt;easy to use&lt;/strong&gt; as possible (see my last &lt;a href="https://spring.io/blog/2016/10/11/spring-data-geode-1-0-0-apache-geode-incubating-m3-released"&gt;blog post&lt;/a&gt;), I have been collaborating closely with the Geode engineering team to improve on the initial design and really make &lt;em&gt;Integrated Security&lt;/em&gt; a first-class citizen in &lt;em&gt;Spring Data Geode&lt;/em&gt; by employing many of the fundamental API and framework design concepts popularized by the &lt;em&gt;Spring Framework&lt;/em&gt; and &lt;em&gt;Spring Boot&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;So, I give you the &lt;strong&gt;new&lt;/strong&gt; &lt;code&gt;@EnableSecurity&lt;/code&gt; annotation in SDG&amp;rsquo;s new Annotation-based configuration model. You have several ways in which to configure &lt;em&gt;Apache Geode&amp;rsquo;s&lt;/em&gt; security features using the annotation.&lt;/p&gt;&lt;h4&gt;&lt;a href="#securitymanager-class-name-reference" class="anchor" name="securitymanager-class-name-reference"&gt;&lt;/a&gt;SecurityManager class name reference&lt;/h4&gt;
+&lt;p&gt;You can still reference a Geode &lt;code&gt;SecurityManager&lt;/code&gt; implementation by its fully-qualified class name using&amp;hellip;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package example;&#xD;
+&#xD;
+class ExampleSecurityManager &#xD;
+    implements org.apache.geode.security.SecurityManager {&#xD;
+  ...&#xD;
+}&#xD;
+&#xD;
+@CacheServerApplication(name = &amp;quot;ClassNameExample&amp;quot;)&#xD;
+@EnableSecurity(securityManagerClassName = &amp;quot;example.ExampleSecurityManager&amp;quot;)&#xD;
+class ExampleApplication {&#xD;
+  ...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A more detailed example can be seen in the SDG &lt;em&gt;Contacts Application&lt;/em&gt; RI, &lt;a href="https://github.com/jxblum/contacts-application/blob/SDG-1.0.0.INCUBATING-RELEASE/security-example/src/test/java/example/app/geode/security/GeodeSecurityIntegrationTests.java#L236-L242"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;However, you must provide a default, no-arg constructor, and your Geode &lt;code&gt;SecurityManager&lt;/code&gt; implementation will be responsible for loading all the security authentication/authorization details upon construction; not very ideal.&lt;/p&gt;&lt;h4&gt;&lt;a href="#securitymanager-proxy-implementation" class="anchor" name="securitymanager-proxy-implementation"&gt;&lt;/a&gt;SecurityManager proxy implementation&lt;/h4&gt;
+&lt;p&gt;Another option is to create a &lt;code&gt;Proxy&lt;/code&gt; implementing the Geode &lt;code&gt;SecurityManager&lt;/code&gt; interface, which delegates to an actual, underlying Geode &lt;code&gt;SecurityManager&lt;/code&gt; configured in and injected by the &lt;em&gt;Spring&lt;/em&gt; container, or other managed environment like Pivotal &lt;em&gt;CloudFoundry&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;One such &lt;code&gt;Proxy&lt;/code&gt; implementation can been seen in the RI &lt;a href="https://github.com/jxblum/contacts-application/blob/SDG-1.0.0.INCUBATING-RELEASE/contacts-core/src/main/java/example/app/geode/security/SecurityManagerProxy.java"&gt;here&lt;/a&gt;, and is configured as follows&amp;hellip;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@CacheServerApplication(name = &amp;quot;ProxyExample&amp;quot;)&#xD;
+@EnableSecurity(securityManagerClassName = &#xD;
+  &amp;quot;example.app.geode.security.SecurityManagerProxy&amp;quot;, &#xD;
+  useBeanFactoryLocator = true)&#xD;
+class ExampleApplication {&#xD;
+&#xD;
+    ...&#xD;
+&#xD;
+    @Bean&#xD;
+    JdbcSecurityRepository securityRepository(JdbcTemplate template) {&#xD;
+      return new JdbcSecurityRepository(template);&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    SimpleSecurityManager securityManager(&#xD;
+        SecurityRepository&amp;lt;User&amp;gt; securityRepository) {&#xD;
+&#xD;
+      return new SimpleSecurityManager(securityRepository);&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;SecurityMangerProxy&lt;/code&gt; is constructed by &lt;em&gt;Apache Geode&lt;/em&gt; during cache initialization. The &lt;em&gt;Spring&lt;/em&gt; container will find the &lt;a href="https://github.com/jxblum/contacts-application/blob/SDG-1.0.0.INCUBATING-RELEASE/contacts-core/src/main/java/example/app/geode/security/provider/SimpleSecurityManager.java"&gt;SimpleSecurityManager&lt;/a&gt; bean definition and inject it into the &lt;code&gt;SecurityManagerProxy&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;SecurityManagerProxy&lt;/code&gt; works by leveraging another &lt;em&gt;Spring&lt;/em&gt; feature, the &lt;a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/access/BeanFactoryLocator.html"&gt;BeanFactoryLocator&lt;/a&gt;, which is used by SDG, as mentioned in the &lt;a href="http://docs.spring.io/spring-data-gemfire/docs/current/reference/html/#apis:declarable"&gt;Reference Guide&lt;/a&gt; (and &lt;a href="http://docs.spring.io/spring-data-gemfire/docs/current/reference/html/#bootstrap:cache:advanced"&gt;here&lt;/a&gt;), to configure and auto-wire objects constructed and initialized outside of the &lt;em&gt;Spring&lt;/em&gt; container, such as by &lt;em&gt;Apache Geode&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This is useful in situations where an application object (e.g. &lt;a href="http://geode.incubator.apache.org/releases/latest/javadoc/org/apache/geode/cache/CacheLoader.html"&gt;CacheLoader&lt;/a&gt;) may have been defined in Geode&amp;rsquo;s native &lt;code&gt;cache.xml&lt;/code&gt; config and needs to be auto-wired with bean(s) (e.g. &lt;code&gt;DataSource&lt;/code&gt;) defined in the &lt;em&gt;Spring&lt;/em&gt; container. This also works for objects referenced in Geode (System) properties like the &lt;code&gt;SecurityManager&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;SecurityManagerProxy&lt;/code&gt; must &lt;a href="https://github.com/jxblum/contacts-application/blob/SDG-1.0.0.INCUBATING-RELEASE/contacts-core/src/main/java/example/app/geode/security/SecurityManagerProxy.java#L39-L40"&gt;extend&lt;/a&gt; the &lt;a href="http://docs.spring.io/spring-data-gemfire/docs/current/api/org/springframework/data/gemfire/LazyWiringDeclarableSupport.html"&gt;LazyWiringDeclarableSupport&lt;/a&gt; class, which enables the &lt;code&gt;Proxy&lt;/code&gt; to be auto-wired by the &lt;em&gt;Spring&lt;/em&gt; container using the &lt;code&gt;BeanFactoryLocator&lt;/code&gt; once Geode constructs the object. It&amp;rsquo;s quite slick actually.&lt;/p&gt;
+&lt;p&gt;You can see the complete example configuration in the RI &lt;a href="https://github.com/jxblum/contacts-application/blob/SDG-1.0.0.INCUBATING-RELEASE/security-example/src/test/java/example/app/geode/security/GeodeSecurityIntegrationTests.java#L244-L281"&gt;here&lt;/a&gt;. This also requires the &lt;code&gt;useBeanFactoryLocator&lt;/code&gt; attribute to be set to &lt;strong&gt;true&lt;/strong&gt; &lt;a href="https://github.com/jxblum/contacts-application/blob/SDG-1.0.0.INCUBATING-RELEASE/security-example/src/test/java/example/app/geode/security/GeodeSecurityIntegrationTests.java#L196-L197"&gt;on the Geode Server, &lt;em&gt;Spring Boot&lt;/em&gt; application class&lt;/a&gt;, which is shown in the example above as well.&lt;/p&gt;&lt;h4&gt;&lt;a href="#apache-shiro-ini-configuration-file" class="anchor" name="apache-shiro-ini-configuration-file"&gt;&lt;/a&gt;Apache Shiro INI configuration file&lt;/h4&gt;
+&lt;p&gt;Perhaps you do not want to unnecessarily couple your application code to Geode&amp;rsquo;s proprietary classes and interfaces, such as the &lt;code&gt;SecurityManager&lt;/code&gt;. Perhaps you just want to fully utilize &lt;em&gt;Apache Shiro`s&lt;/em&gt; security framework.&lt;/p&gt;
+&lt;p&gt;One way to do this is to create an &lt;em&gt;Apache Shiro&lt;/em&gt; &lt;a href="http://shiro.apache.org/configuration.html#Configuration-INIConfiguration"&gt;INI configuration file&lt;/a&gt; and reference it in the &lt;code&gt;@EnableSecurity&lt;/code&gt; annotation like so&amp;hellip;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@CacheServerApplication(name = &amp;quot;ProxyExample&amp;quot;)&#xD;
+@EnableSecurity(shiroIniResourcePath = &amp;quot;my-shiro.ini&amp;quot;)&#xD;
+class ExampleApplication {&#xD;
+    ...&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, the &lt;em&gt;Apache Shiro&lt;/em&gt; INI file must be on the classpath. Due to the present &lt;em&gt;Apache Geode&lt;/em&gt; &lt;a href="https://issues.apache.org/jira/browse/GEODE-2054"&gt;limitation&lt;/a&gt;, it is not possible to use other resource specifiers (e.g. &lt;code&gt;file:&lt;/code&gt; or &lt;code&gt;url:&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;This completed example configuration can be seen &lt;a href="https://github.com/jxblum/contacts-application/blob/SDG-1.0.0.INCUBATING-RELEASE/security-example/src/test/java/example/app/geode/security/GeodeSecurityIntegrationTests.java#L283-L287"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h4&gt;&lt;a href="#apache-shiro-realms" class="anchor" name="apache-shiro-realms"&gt;&lt;/a&gt;Apache Shiro Realms&lt;/h4&gt;
+&lt;p&gt;However, what you, as an application developer, really want to do is just define &lt;em&gt;Apache Shiro&lt;/em&gt; &lt;code&gt;Realms&lt;/code&gt; as &lt;em&gt;Spring&lt;/em&gt; beans in the &lt;em&gt;Spring&lt;/em&gt; container to access the security meta-data needed by your application to secure &lt;em&gt;Apache Geode&lt;/em&gt; and have &lt;em&gt;Spring&lt;/em&gt; do all the work.&lt;/p&gt;
+&lt;p&gt;Well, SDG can do that for you too. For example&amp;hellip;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@CacheServerApplication(name = &amp;quot;RealmExample&amp;quot;)&#xD;
+@EnableSecurity&#xD;
+class ExampleApplication {&#xD;
+&#xD;
+    @Bean&#xD;
+    PropertiesRealm shiroRealm() {&#xD;
+      PropertiesRealm propertiesRealm = new PropertiesRealm();&#xD;
+      propertiesRealm.setResourcePath(&amp;quot;classpath:shiro.properties&amp;quot;);&#xD;
+      propertiesRealm.setPermissionResolver(new GeodePermissionResolver());&#xD;
+      return propertiesRealm;&#xD;
+    }&#xD;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&amp;rsquo;s it; that is all you need.&lt;/p&gt;
+&lt;p&gt;Notice the Shiro &lt;a href="http://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/text/PropertiesRealm.html"&gt;PropertiesRealm&lt;/a&gt; uses the &lt;code&gt;GeodePermissionResolver&lt;/code&gt; to resolve Geode permissions. Additionally, you have the option to specify whatever resource path you choose; you are not restricted to the &lt;code&gt;classpath:&lt;/code&gt; only.&lt;/p&gt;
+&lt;p&gt;You are also free to define whatever &lt;code&gt;Realms&lt;/code&gt; (e.g. JDBC, JNDI, LDAP, etc) provided by Shiro that your application uses to access its security meta-data.&lt;/p&gt;
+&lt;p&gt;If you define more than one Shiro &lt;code&gt;Realm&lt;/code&gt;, you can even order them using &lt;em&gt;Spring&amp;rsquo;s&lt;/em&gt; &lt;code&gt;@Order&lt;/code&gt; annotation on the &lt;code&gt;Realm&lt;/code&gt; bean definitions, like so&amp;hellip;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@CacheServerApplication(name = &amp;quot;OrderedMultiRealmExample&amp;quot;)&#xD;
+@EnableSecurity&#xD;
+class ExampleApplication {&#xD;
+&#xD;
+    @Bean&#xD;
+    @Order(1)&#xD;
+    IniRealm iniRealm() {&#xD;
+      IniRealm iniRealm = new IniRealm(&amp;quot;classpath:partial-shiro.ini&amp;quot;);&#xD;
+      iniRealm.setPermissionResolver(new GeodePermissionResolver());&#xD;
+      return iniRealm;&#xD;
+    }&#xD;
+&#xD;
+    @Bean&#xD;
+    @Order(2)&#xD;
+    PropertiesRealm propertiesRealm() {&#xD;
+      PropertiesRealm propertiesRealm = new PropertiesRealm();&#xD;
+      propertiesRealm.setResourcePath(&amp;quot;classpath:partial-shiro.properties&amp;quot;);&#xD;
+      propertiesRealm.setPermissionResolver(new GeodePermissionResolver());&#xD;
+      return propertiesRealm;&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;Realm&lt;/code&gt; ordering is an important factor in the &lt;em&gt;authentication strategy&lt;/em&gt; used in &lt;em&gt;Apache Shiro&amp;rsquo;s&lt;/em&gt; &lt;a href="http://shiro.apache.org/authentication.html#Authentication-sequence"&gt;Authentication Sequence&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can can see multiple example configurations of using Shiro &lt;code&gt;Realms&lt;/code&gt; in the RI &lt;a href="https://github.com/jxblum/contacts-application/blob/SDG-1.0.0.INCUBATING-RELEASE/security-example/src/test/java/example/app/geode/security/GeodeSecurityIntegrationTests.java#L289-L386"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h1&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s Next&lt;/h1&gt;
+&lt;p&gt;We covered a lot of ground, but still, there is more work to do. Specifically, I intend on doing the following&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Integrate &lt;em&gt;Apache Geode&amp;rsquo;s&lt;/em&gt; &lt;em&gt;Integrated Security&lt;/em&gt; framework with &lt;a href="http://projects.spring.io/spring-security/"&gt;Spring Security&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Improve &lt;em&gt;Spring Boot&amp;rsquo;s&lt;/em&gt; auto-configuration support for SDG &lt;a href="http://docs.spring.io/spring-boot/docs/1.4.2.RELEASE/reference/htmlsingle/#boot-features-nosql"&gt;Repositories&lt;/a&gt; as well as auto-configure &lt;em&gt;Apache Geode&lt;/em&gt; as a &lt;a href="http://docs.spring.io/spring-boot/docs/1.4.2.RELEASE/reference/htmlsingle/#_supported_cache_providers"&gt;caching provider&lt;/a&gt; using &lt;em&gt;Spring&amp;rsquo;s&lt;/em&gt; &lt;a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#cache"&gt;Cache Abstraction&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Extend SDG&amp;rsquo;s Annotation configuration support to dynamically create Geode cache &lt;em&gt;Region&amp;rsquo;s&lt;/em&gt; based on an entity and/or &lt;em&gt;Repository&lt;/em&gt; bean definitions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Much more is in the works, so stay tuned.&lt;/p&gt;&lt;h1&gt;&lt;a href="#additional-release-highlights" class="anchor" name="additional-release-highlights"&gt;&lt;/a&gt;Additional Release Highlights&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Sets the base Java version to &lt;strong&gt;Java 8&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Upgraded to &lt;em&gt;Spring Framework&lt;/em&gt; 4.3.4.RELEASE.&lt;/li&gt;
+  &lt;li&gt;Upgraded to &lt;em&gt;Spring Data Commons&lt;/em&gt; 1.12.5.RELEASE.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-data-gemfire/blob/1.0.0.APACHE-GEODE-INCUBATING-RELEASE/src/main/resources/changelog.txt#L7-L14"&gt;changelog&lt;/a&gt; for additional details.&lt;/p&gt;&lt;h1&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;As always, feedback is most welcomed and you can reach out to us in &lt;a href="https://jira.spring.io/browse/SGF"&gt;JIRA&lt;/a&gt; or on &lt;a href="http://stackoverflow.com/questions/tagged/spring-data-gemfire"&gt;StackOverflow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thank you all! Happy coding.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Security 4.2.0 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/10/spring-security-4-2-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2016-11-09:2693</id>
+    <updated>2016-11-10T13:09:21Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I am pleased to announce the release of Spring Security 4.2.0.RELEASE.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="what-s-new-in-spring-security-4-2" class="sect0"&gt;&lt;a class="anchor" href="#what-s-new-in-spring-security-4-2"&gt;&lt;/a&gt;What’s New in Spring Security 4.2&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;You can find highlights of what&amp;#8217;s new in the &lt;a href="http://docs.spring.io/spring-security/site/docs/4.2.x/reference/htmlsingle/#new"&gt;What’s New in Spring Security 4.2&lt;/a&gt; section of the reference. This release closes out 80+ issues which can be found in the &lt;a href="https://github.com/spring-projects/spring-security/milestone/86?closed=1"&gt;4.2 M1&lt;/a&gt;,  &lt;a href="https://github.com/spring-projects/spring-security/milestone/91?closed=1"&gt;4.2 RC1&lt;/a&gt;, and &lt;a href="https://github.com/spring-projects/spring-security/milestone/92?closed=1"&gt;4.2 RELEASE&lt;/a&gt; changelogs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="contributions" class="sect0"&gt;&lt;a class="anchor" href="#contributions"&gt;&lt;/a&gt;Contributions&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Without the community we couldn&amp;#8217;t be the successful project we are today. I&amp;#8217;d like to thank everyone that created issues &amp;amp; provided feedback.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;An easy way to contribute is to help &lt;a href="https://twitter.com/rob_winch/status/796700800701579264"&gt;spread the word&lt;/a&gt; about the release.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="feedback-please" class="sect0"&gt;&lt;a class="anchor" href="#feedback-please"&gt;&lt;/a&gt;Feedback Please&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you have feedback on this release, I encourage you to reach out via
+&lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;StackOverflow&lt;/a&gt;,
+&lt;a href="https://github.com/spring-projects/spring-security/issues"&gt;GitHub
+Issues&lt;/a&gt;, or via the comments section. You can also ping me
+&lt;a href="https://twitter.com/rob_winch"&gt;@rob_winch&lt;/a&gt; or Joe
+&lt;a href="https://twitter.com/joe_grandja"&gt;@joe_grandja&lt;/a&gt; on Twitter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Of course the best feedback comes in the form of
+&lt;a href="https://github.com/spring-projects/spring-security/blob/master/CONTRIBUTING.md"&gt;contributions&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
+&lt;a href="http://docs.spring.io/spring-security/site/docs/4.2.0.RELEASE/reference/htmlsingle/"&gt;Reference&lt;/a&gt;
+|
+&lt;a href="http://docs.spring.io/spring-security/site/docs/4.2.0.RELEASE/guides/html5/"&gt;Guides&lt;/a&gt;
+| &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 1.1 RC1 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/09/spring-cloud-data-flow-1-1-rc1-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Pollack</name>
+    </author>
+    <id>tag:spring.io,2016-11-09:2692</id>
+    <updated>2016-11-09T20:37:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the team, I am pleased to announce the first release candidate of Spring Cloud Data Flow 1.1.  Follow the links in the &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RC1/reference/htmlsingle/#getting-started"&gt;getting started guide&lt;/a&gt; to download the local server implementation and shell to create Stream and Tasks.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The 1.1 RC1 release includes the following new features and improvements:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Builds upon Camden.SR2 release improvements&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RC1/reference/htmlsingle/#_ldap_transport_security"&gt;LDAP authentication&lt;/a&gt; is now supported with SSL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Portable deployment properties for memory and cpu are in place for support across various runtime implementations&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Passing Java Options to the local JVM when launching application is now supported&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UI Improvements&lt;/p&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;List pages now support sorting&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Server-side search support for stream and task list pages&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Content-assist for bulk task definitions including the support for incremental validations of task application properties&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add content assist support for tasks in the shell&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Thanks to the community for adding DB2 support for the TaskRepository&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.1.0.RC1/reference/htmlsingle/#_spring_boot_admin"&gt;Documentation on how to use Spring Boot Admin&lt;/a&gt; to visualize server metrics&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Stay tuned for some more additions to the reference guide for stream monitoring as well as the upcoming release train of new stream application starters, now structured as a &lt;a href="https://github.com/spring-cloud-stream-app-starters"&gt;github organization&lt;/a&gt; with independent repositories for each application.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Review the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/milestone/9?closed=1"&gt;1.1.0.RC1 release marker&lt;/a&gt; to learn more about the incremental improvements.&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tips: Spring Cloud Stream</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/11/09/spring-tips-spring-cloud-stream" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2016-11-03:2678</id>
+    <updated>2016-11-09T00:58:00Z</updated>
+    <content type="html">&lt;p&gt;Speaker: &lt;a href="https://www.twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hi Spring fans! In this tip, we&amp;rsquo;ll quickly look at how to build messaging-based microservices using Spring Cloud Stream&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/HQ00E60kB6c" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+</feed>
