@@ -770,3 +770,9 @@ org.eclipse.core.runtime.CoreException: Launch configuration HelloSpringApp refe
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2016-11-25 00:17:40.965
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-11-25 00:26:02.955
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-11-25 00:26:02.958
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

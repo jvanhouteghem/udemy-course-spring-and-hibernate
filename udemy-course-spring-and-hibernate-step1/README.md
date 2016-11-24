@@ -190,3 +190,4 @@ Exception :
 Exception in thread "main" java.lang.IllegalStateException: BeanFactory not initialized or already closed - call 'refresh' before accessing beans via the ApplicationContext
 ```
 Mean your ApplicationContext is not conform with your Spring dependencies.
+Also make sure you properly add "applicationContext.xml" in ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
