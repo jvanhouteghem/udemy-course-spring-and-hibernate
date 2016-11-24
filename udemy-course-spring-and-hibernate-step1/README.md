@@ -138,6 +138,8 @@ public class TrackCoach implements Coach {
 Step 1.2 : Lets use Spring Inversion of Control - XML Configuration
 ---
 
+Now we want to change the used class from a config file ... How will we do that ? With Spring of course !
+
 A. Create applicationContext.xml in src/main/resource
 
 ```xml
