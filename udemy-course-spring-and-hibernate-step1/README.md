@@ -4,7 +4,7 @@ Step 1 : Spring Inversion of Control - XML Configuration
 ---
 ---
 
-Step 1.1 : Without Spring Inversion of Control (the hardcoded mode :-( ))
+Step 1.1 : Without Spring Inversion of Control (the hardcoded mode :-( )
 ---
 
 I. A simple start example without Spring
