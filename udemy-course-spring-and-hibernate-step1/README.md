@@ -10,7 +10,7 @@ Step 1.1 : Without Spring Inversion of Control (the hardcoded mode :-( ))
 I. A simple start example without Spring
 ---
 
-A. Create new package (mine is com.jvanhouteghem.step0)
+A. Create new package (mine is com.jvanhouteghem.springdemo)
 
 B. Add BaseballCoach class
 
@@ -137,3 +137,56 @@ public class TrackCoach implements Coach {
 
 Step 1.2 : Lets use Spring Inversion of Control - XML Configuration
 ---
+
+A. Create applicationContext.xml in src/main/resource
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    <bean id="myCoach" 
+    	class="com.jvanhouteghem.springdemo.TrackCoach">
+    </bean>
+    
+</beans>
+```
+
+B. Create new (main) class named HelloSpringApp
+
+```java
+package com.jvanhouteghem.springdemo;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class HelloSpringApp {
+
+	public static void main(String[] args) {
+		
+		// load the spring configuration file
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
+		
+		// retrieve bean from spring container
+		Coach theCoach = context.getBean("myCoach", Coach.class); // the bean id
+		
+		// call methods on the bean
+		System.out.println(theCoach.getDailyWorkout());
+		
+		// close the context
+		context.close();
+	}
+
+}
+```
+
+Exception : 
+```
+Exception in thread "main" java.lang.IllegalStateException: BeanFactory not initialized or already closed - call 'refresh' before accessing beans via the ApplicationContext
+```
+Mean your ApplicationContext is not conform with your Spring dependencies.
