@@ -146,8 +146,60 @@ public class HelloSpringApp {
 }
 ```
 
+NB : To remove argument error in MyApp just add no-arg constructor to TrackCoach class.
+
 Output : 
 ```
 >>> Spend 30 minutes on batting practice
 >>> Today is your lucky day!
 ```
+
+5. Now let's update TrackCoach
+
+```java 
+public class TrackCoach implements Coach {
+
+	private FortuneService fortuneService;
+	
+    // (new)
+	public TrackCoach(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
+
+	@Override
+	public String getDailyWorkout() {
+		return "Run a hard 5k";
+	}
+
+    // (update)
+	@Override
+	public String getDailyFortune() {
+		return "Just Do It: " + fortuneService.getFortune();
+	}
+
+}
+```
+
+6. Then swap BaseballCoach with TrackCoach in applicationContext
+
+```xml
+	<!--  define the dependency -->
+	<bean id="myFortune"
+		class="com.jvanhouteghem.springdemo.HappyFortuneService">
+	</bean>
+
+    <!-- Define your beans here -->
+    <bean id="myCoach" 
+    	class="com.jvanhouteghem.springdemo.TrackCoach">
+    	<!--  set up constructor injection -->
+    	<constructor-arg ref="myFortune"/>
+    </bean>
+```
+
+Output : 
+```
+>>> Run a hard 5k
+>>> Just Do It: Today is your lucky day!
+```
+
+II. Setter Injection
