@@ -1,0 +1,35 @@
+package com.jvanhouteghem.springdemo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyApp {
+
+	public static void main(String[] args) {
+		
+		// create the object
+		Coach theCoach = new TrackCoach();
+		
+		// use the object
+		System.out.println(theCoach.getDailyWorkout());
+		
+		List rowList = new ArrayList();
+		
+		
+        for (int i = 0; i < 5; i++) {
+            String row = "_................";
+            System.out.println(row);
+            
+            // Split de la ligne actuelle de H
+            String[] splitX = row.split("-");
+            
+            // Stockage du Split dans un tableau
+            rowList.add(splitX);
+            
+        }
+        
+        String railActuel = (String) rowList.get(0); //[positionX]; // Le rail actuel
+
+	}
+
+}

@@ -3,6 +3,10 @@
 Step 2 :Spring Dependency Injection - XML Configuration
 ---
 
+There is 2 Spring Injection Types : 
+- Constructor Injection
+- Setter Injection
+
 I. Constructor Injection
 
 Summary : 
