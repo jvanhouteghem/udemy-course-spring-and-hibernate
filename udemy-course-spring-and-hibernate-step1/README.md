@@ -172,7 +172,7 @@ public class HelloSpringApp {
 	public static void main(String[] args) {
 		
 		// load the spring configuration file
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// retrieve bean from spring container
 		Coach theCoach = context.getBean("myCoach", Coach.class); // the bean id
@@ -194,3 +194,14 @@ Exception in thread "main" java.lang.IllegalStateException: BeanFactory not init
 Mean your ApplicationContext is not conform with your Spring dependencies.
 
 Also make sure you properly add "applicationContext.xml" in ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+C. Lets change the configuration file
+
+Now if we want to change the configuration file we can just switch the name of the bean in applicationContext.
+
+```xml
+    <!-- Define your beans here -->
+    <bean id="myCoach" 
+    	class="com.jvanhouteghem.springdemo.BaseballCoach">
+    </bean>
+```
