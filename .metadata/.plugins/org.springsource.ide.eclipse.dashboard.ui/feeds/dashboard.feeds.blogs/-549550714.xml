@@ -5,7 +5,57 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2016-12-01T17:00:51Z</updated>
+  <updated>2016-12-02T16:05:01Z</updated>
+  <entry>
+    <title>Spring Integration 5.0 Milestone 1 Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/12/02/spring-integration-5-0-milestone-1-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Gary Russell</name>
+    </author>
+    <id>tag:spring.io,2016-12-02:2721</id>
+    <updated>2016-12-02T16:05:01Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;We are pleased to announce that the first milestone for the 5.0 version of Spring Integration is now available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This is a new major version, based on &lt;a href="https://spring.io/blog/2016/11/08/spring-framework-5-0-m3-released"&gt;Spring Framework 5.0&lt;/a&gt; and requires Java 8; this is the biggest change so far, but the following are also included:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl"&gt;Java DSL&lt;/a&gt; is now rolled into the framework itself; there are some minor changes to the DSL, such as the removal of the &lt;code&gt;.handleWithAdapter()&lt;/code&gt; methods and some general Factory classes. A complete discussion of the DSL changes can be found in the &lt;a href="https://github.com/spring-projects/spring-integration/wiki/Spring-Integration-4.3-to-5.0-Migration-Guide"&gt;Migration Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade to &lt;a href="https://spring.io/blog/2016/11/23/first-milestone-of-next-generation-spring-data-released"&gt;Spring Data Kay&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade to &lt;a href="https://spring.io/blog/2016/11/30/spring-amqp-2-0-milestone-1-available"&gt;Spring AMQP 2.0&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;First class support for TCP/UDP has been added to the DSL.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Integration is now based on Reactor 3.0 and Messaging Gateway &lt;code&gt;Promise&lt;/code&gt; methods now have to be changed to return &lt;code&gt;Mono&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can now configure mid-flow transactions via &lt;code&gt;TransactionHandleMessageAdvice&lt;/code&gt; for &lt;code&gt;adviceChain&lt;/code&gt; Messaging Annotations attribute and &lt;code&gt;&amp;lt;transactional&amp;gt;&lt;/code&gt; sub-element when using XML configuration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And of course anotther goal of this new Spring Integration generation is to add Reactive Streams support. Right now, it is represented by the &lt;code&gt;ReactiveChannel&lt;/code&gt; and &lt;code&gt;ReactiveConsumer&lt;/code&gt;. Also, all of the out-of-the-box &lt;code&gt;MessageHandler&lt;/code&gt; s are now Reactive &lt;code&gt;Subscriber&lt;/code&gt; s with the ability to process messages from an upstream &lt;code&gt;MessageChannel&lt;/code&gt; including back-pressure support, when a &lt;code&gt;ReactiveConsumer&lt;/code&gt; is used.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For complete information, see the &lt;a href="http://docs.spring.io/spring-integration/docs/5.0.0.M1/reference/html/whats-new.html"&gt;What&amp;#8217;s new&lt;/a&gt; in the reference manual and the &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10121&amp;amp;version=15594"&gt;JIRA release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;More new features &amp;amp; improvements and, of course, more Reactive Streams support in the upcoming milestones.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/INT"&gt;JIRA&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.md"&gt;Contributions&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Spring Statemachine 1.2.0.RC1 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2016/12/01/spring-statemachine-1-2-0-rc1-released" />
@@ -27,6 +77,32 @@
 &lt;/ul&gt;
 &lt;p&gt;Full changes as usual are available from &lt;a href="https://github.com/spring-projects/spring-statemachine/blob/master/docs/src/info/changelog.txt"&gt;changelog&lt;/a&gt;. We&amp;rsquo;re planning to fire up 1.2.0.RELEASE before xmas and possibly do a second release candicate if any major issues are found.&lt;/p&gt;
 &lt;p&gt;Thank you for all who have contributed in any way either via Stack Overflow, GitHub Issues or other channels. Driving force for changes really has been a community and requests from it.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Webinar Dec 8th: Awesome tools to level up your Spring Cloud architecture</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/12/01/webinar-dec-8th-awesome-tools-to-level-up-your-spring-cloud-architecture" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-12-01:2720</id>
+    <updated>2016-12-01T14:54:00Z</updated>
+    <content type="html">&lt;p&gt;Getting up and running with Spring Cloud is a breeze. But once the initial setup is done, it needs to be complemented with an ecosystem that can cope with the extra operational complexity and quality concerns. While running Spring Cloud in production for over a year, Pivotal has integrated some interesting tools for documentation, operations and testing. During this talk you will see a demo of an integrated platform based on Spring Cloud, including tools like Spring Cloud Contract, wiremock, saboteur, ELK, Spinnaker, Spring Boot Admin and more. One of these tools is a dashboard for visualising Pivotal’s Spring Cloud microservice architecture, which has recently been open sourced. Documenting, testing, troubleshooting, and monitoring highly distributed systems in microservice architectures are hard. Finding quality, complementary tools in the wilds of open source can be even harder. Join this webinar for a pragmatic look at taming some of the challenges of running microservices in production.&lt;/p&gt;
+&lt;p&gt;North America&lt;br/&gt;Thursday, December 8&lt;br/&gt;10:00am PST (UTC-8 hours)&lt;br/&gt;&lt;a href="http://connect.pivotal.io/OSS_Webinar_8-Tools-Spring-Cloud-Arch_Q416_8-Awesome-Tools-for-Spring-Cloud-Architecture.html"&gt;Register Now!&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Building Modern Web Applications with Angular2</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/12/01/springone-platform-2016-replay-building-modern-web-applications-with-angular2" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2016-12-01:2719</id>
+    <updated>2016-12-01T13:37:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Sergi Almar&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/building-modern-web-applications-with-angular2"&gt;http://www.slideshare.net/SpringCentral/building-modern-web-applications-with-angular2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Web development has become more complex in the last few years with a plethora of frameworks to choose from and no clear direction. Join Sergi Almar in this presentation to learn why Angular2 is a good fit for Spring developers. We&amp;rsquo;ll review the Angular2 architecture and see how TypeScript allows us to build more maintable and clean applications having the benefits of a typed language. We&amp;rsquo;ll look at the Angular2 component based model, dependency injection, data binding, routing, templates&amp;hellip;to build modern web applications.&lt;/p&gt;
+&lt;p&gt;No prior AngularJS knowledge is required.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dx8fbW8cWGw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
   <entry>
     <title>SpringOne Platform 2016 Replay: Netflix's Edge Gateway Using Zuul</title>
@@ -62,7 +138,7 @@
       <name>Gary Russell</name>
     </author>
     <id>tag:spring.io,2016-11-30:2713</id>
-    <updated>2016-11-30T16:58:05Z</updated>
+    <updated>2016-11-30T16:58:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;We are pleased to announce the first milestone of Spring AMQP 2.0 is now available.&lt;/p&gt;
 &lt;/div&gt;
@@ -76,7 +152,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;The framework is now fully Java 8 based; several functional interfaces are provided for convenient Lambda implementations (callbacks, &lt;code&gt;ReplyingMessageListener&lt;/code&gt; etc).
-Java 8 is now a requirement.&lt;/p&gt;
+Java 8 is now a requirement. It is also based on &lt;a href="https://spring.io/blog/2016/11/08/spring-framework-5-0-m3-released"&gt;Spring Framework 5.0&lt;/a&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The framework uses the new &lt;a href="http://www.rabbitmq.com/blog/2016/11/24/rabbitmq-java-client-4-0-is-released/"&gt;4.0 amqp-client library&lt;/a&gt;.&lt;/p&gt;
@@ -804,976 +880,5 @@ You can find executable examples for all of that in our examples repository.&lt;
   &lt;li&gt;the latest release of the Ceylon language, 1.3.1, has been released &lt;a href="https://ceylon-lang.org/blog/2016/11/22/ceylon-1-3-1/"&gt;and features interoperability with technologies like Spring Boot&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;the latest release of &lt;a href="https://groups.google.com/forum/#!topic/rabbitmq-users/d9MN-fbaP_s"&gt;RabbitMQ - 3.5.8&lt;/a&gt; has been released&lt;/li&gt;
 &lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>The Joy of Mustache: Server Side Templates for the JVM</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/11/21/the-joy-of-mustache-server-side-templates-for-the-jvm" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Dave Syer</name>
-    </author>
-    <id>tag:spring.io,2016-11-21:2701</id>
-    <updated>2016-11-21T10:46:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;I don&amp;#8217;t do much server-side templating, but when I do&amp;#8230;&amp;#8203; well frankly,
-I tend to forget things. Every template language has its strengths and
-weaknesses, and they all have syntax to remember, and more frequently
-to forget. Recently I completed some work on the old
-&lt;a href="https://github.com/spring-projects/spring-petclinic"&gt;Spring Petclinic&lt;/a&gt;,
-converting it to use &lt;a href="http://www.thymeleaf.org/"&gt;Thymeleaf&lt;/a&gt; in the view
-layer, and re-organizing the code to be a bit more "modern". I enjoyed
-working with Thymeleaf 3, and found it a pleasant experience, but had
-to spend a lot of time scanning documentation and samples. Then I had
-another little project that needed some templates, and I remembered my
-fondness for &lt;a href="http://mustache.github.com"&gt;Mustache&lt;/a&gt;, which we added to
-Spring Boot back in version 1.2, and which plays an important role in
-the excellent
-&lt;a href="https://github.com/spring-projects/spring-restdocs"&gt;Spring REST
-Docs&lt;/a&gt; tool. I added &lt;code&gt;spring-boot-starter-mustache&lt;/code&gt; to my new project, and
-was up and running within seconds.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;I want to show you what a neat little tool
-&lt;a href="https://github.com/samskivert/jmustache"&gt;JMustache&lt;/a&gt; is for server side
-rendering of HTML (or anything else in plain text come to that). I
-always liked &lt;a href="http://mustache.github.com/"&gt;Mustache&lt;/a&gt; because of its
-simplicity - it&amp;#8217;s "just enough" templating - and you really couldn&amp;#8217;t
-wish for a cleaner, leaner, more lightweight library than this one, if
-you have to render templates in the JVM. There is one jar file with no
-dependencies, and it adds 78kb to your classpath, which isn&amp;#8217;t going to
-hurt anyone, and will put a smile on many faces. It has very few
-features, which is excellent for people who can&amp;#8217;t remember syntax, and
-the manual is short, comprehensive, readable, and useful.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you carry on reading, as we build up a sample application, you will
-see how to build HTML pages with Mustache, rendering static and
-dynamic content, building forms and menus, and abstracting the layout
-of the pages into separate components. The simplicity of Mustache
-shines through, and guides you to put logic in Java, keeping the
-templates as clean as possible. As a sidebar you will see how to
-secure an application with a custom login form in a slightly unusual
-but interesting way.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="sample-code"&gt;&lt;a class="anchor" href="#sample-code"&gt;&lt;/a&gt;Sample Code&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;There is some sample code following the text in
-&lt;a href="https://github.com/dsyer/mustache-sample"&gt;GitHub&lt;/a&gt;. It is a tiny Spring
-MVC application, also using Spring Security. If you want to see it
-develop in stages along with the text, you can use some tags:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;"base" is a starting point with a working application&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;"includes" creates a re-usable layout using a header and a footer&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;"layout" is a slightly more advanced implementation using a Mustache
-lambda&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;"menus" adds some more UI elements using more Spring Boot and
-Mustache features&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;At every stage you can checkout the tag and run the app. There is a
-Maven wrapper in the root of the project, so you can build and run it
-from the command line, e.g.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;$ git clone https://github.com/dsyer/mustache-sample
-$ cd mustache-sample
-$ git checkout base
-$ ./mvnw spring-boot:run&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Instead of running from the command line you can import the project
-into your favourite IDE and run the main method in the
-&lt;code&gt;DemoApplication&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The app runs on &lt;a href="http://localhost:8080" class="bare"&gt;http://localhost:8080&lt;/a&gt;, and you can authenticate with
-any username and password (even empty!). There are no real features in
-the sample app, but it does have login and logout and a home page, to
-provide some hooks to show the templating features.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="getting-started"&gt;&lt;a class="anchor" href="#getting-started"&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Spring Boot&lt;/a&gt; has
-autoconfiguration support for JMustache, so it is easy to get up and
-running with a Spring MVC application. You could generate a project
-from the &lt;a href="https://start.spring.io"&gt;Spring Initializr&lt;/a&gt;, and ask it for
-&lt;code&gt;spring-boot-starter-mustache&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot automatically configures a &lt;code&gt;ViewResolver&lt;/code&gt; for JMustache,
-so you can implement a home page by providing a controller that
-returns a view name, e.g.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;HomeController.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Controller
-class HomeController {
-  @GetMapping("/")
-  String home() {
-    return "index";
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With this controller, when the user visits the home page ("/") Spring
-will render a template at &lt;code&gt;classpath:/templates/index.html&lt;/code&gt;, which
-means in the directory &lt;code&gt;src/main/resources/templates&lt;/code&gt; in your
-project. For example you could drop this in and confirm that it works:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;index.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-  &amp;lt;body&amp;gt;
-    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
-    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;
-  &amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="make-the-application-secure"&gt;&lt;a class="anchor" href="#make-the-application-secure"&gt;&lt;/a&gt;Make the Application Secure&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;There&amp;#8217;s no dynamic (templated) content there yet. Let&amp;#8217;s make the app
-secure and add a login form, at which point you will need the dynamic
-content. So add &lt;code&gt;spring-cloud-starter-security&lt;/code&gt; to your dependencies
-and the home page will be automatically protected. Suppose you
-want to have a login form at "/login", so you&amp;#8217;ll need the controller:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;LoginController.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Controller
-@RequestMapping("/login")
-class LoginController {
-
-	@GetMapping
-	public String form() {
-		return "login";
-	}
-
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You will also need some basic security configuration, which you can
-add as a method in the main application, if you extend a base class
-from Spring Security:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;DemoApplication.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@SpringBootApplication
-public class DemoApplication extends WebSecurityConfigurerAdapter {
-
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http.authorizeRequests()
-          .antMatchers("/login", "/error").permitAll()
-          .antMatchers("/**").authenticated()
-        .and().exceptionHandling()
-          .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"));
-  }
-
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="admonitionblock note"&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class="icon"&gt;
-&lt;div class="title"&gt;Note&lt;/div&gt;
-&lt;/td&gt;
-&lt;td class="content"&gt;
-this is a slightly unconventional configuration for form login,
-because it isn&amp;#8217;t using the built-in &lt;code&gt;formLogin()&lt;/code&gt;, which would
-automatically add the authentication entry point. If that&amp;#8217;s
-distracting then skip the next section and just add &lt;code&gt;.formLogin()&lt;/code&gt; to
-your configuration instead of the &lt;code&gt;exceptionHandling()&lt;/code&gt; above
-(everything after the &lt;code&gt;.and()&lt;/code&gt;)
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="custom-authentication-processing-with-spring-mvc"&gt;&lt;a class="anchor" href="#custom-authentication-processing-with-spring-mvc"&gt;&lt;/a&gt;Custom Authentication Processing with Spring MVC&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Security implements form login (and everything else really)
-using a &lt;code&gt;Filter&lt;/code&gt;, so that&amp;#8217;s what you would get with the built in
-&lt;code&gt;formLogin()&lt;/code&gt; configuration. Just to make things interesting, you are
-going to do the authentication in a Spring MVC handler, enabling you
-to add some custom logic, and MVC is easier to work with than
-filters.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;So let&amp;#8217;s extend the &lt;code&gt;LoginController&lt;/code&gt; with a method to handle
-username/password authentication (it is easy to extend to more
-complicated logic). The main thing it needs to do is validate the
-input and if it is a real user, populate the &lt;code&gt;SecurityContext&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;LoginController.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@PostMapping
-public void authenticate(@RequestParam Map&amp;lt;String, String&amp;gt; map) throws Exception {
-  Authentication result = new UsernamePasswordAuthenticationToken(
-      map.get("username"), "N/A",
-      AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"));
-  SecurityContextHolder.getContext().setAuthentication(result);
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="admonitionblock note"&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class="icon"&gt;
-&lt;div class="title"&gt;Note&lt;/div&gt;
-&lt;/td&gt;
-&lt;td class="content"&gt;
-In this simple example there is only a "happy path" - all users are
-authenticated. Obviously this is not a very secure authentication
-process, and you would want to throw an &lt;code&gt;AuthenticationException&lt;/code&gt;,
-e.g. &lt;code&gt;BadCredentialsException&lt;/code&gt;, in a real controller. The exception
-would be handled by Spring Security.
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To mimic the behaviour of the built-in Spring Security login form, you
-also need to be able to redirect to a "saved request" that the user
-tried to access before login. Spring Security has an
-&lt;code&gt;AuthenticationSuccessHandler&lt;/code&gt; abstraction for that, and a simple
-implementation that knows about the saved request. So the
-&lt;code&gt;authenticate&lt;/code&gt; method can use that (it needs the servlet request and
-response, which you can add those as method parameters, and Spring MVC
-will inject them):&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;LoginController.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;private AuthenticationSuccessHandler handler = new SavedRequestAwareAuthenticationSuccessHandler();
-
-@PostMapping
-public void authenticate(@RequestParam Map&amp;lt;String, String&amp;gt; map,
-    HttpServletRequest request, HttpServletResponse response) throws Exception {
-  // ... authenticate user from request parameters
-  handler.onAuthenticationSuccess(request, response, result);
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="the-login-form"&gt;&lt;a class="anchor" href="#the-login-form"&gt;&lt;/a&gt;The Login Form&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Now you are ready to accept authentication requests, you need a form for
-users to fill in and submit. The &lt;code&gt;LoginController&lt;/code&gt; renders the "login"
-template, so you need to add a "login.html" to your templates
-folder. For example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;login.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;body&amp;gt;
-  &amp;lt;h1&amp;gt;Login&amp;lt;/h1&amp;gt;
-  &amp;lt;form action="/login" method="post"&amp;gt;                            &lt;b class="conum"&gt;(1)&lt;/b&gt;
-    &amp;lt;label for="username"&amp;gt;Username:&amp;lt;/label&amp;gt;
-    &amp;lt;input type="text" name="username" /&amp;gt;                         &lt;b class="conum"&gt;(2)&lt;/b&gt;
-    &amp;lt;label for="password"&amp;gt;Password:&amp;lt;/label&amp;gt;
-    &amp;lt;input type="password" name="password" /&amp;gt;                     &lt;b class="conum"&gt;(3)&lt;/b&gt;
-    &amp;lt;input type="hidden" name="_csrf" value="{{_csrf.token}}" /&amp;gt;  &lt;b class="conum"&gt;(4)&lt;/b&gt;
-    &amp;lt;button type="submit" class="btn btn-primary"&amp;gt;Submit&amp;lt;/button&amp;gt;
-  &amp;lt;/form&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="colist arabic"&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;a form, with a submit button to send the contents to "POST /login"&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;username field input&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;password field input&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;CSRF token, in the format required by Spring Security.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The CSRF token is your first piece of dynamic content, and it shows
-you how Mustache works, and incidentally why it is called
-"Mustache". Variables from the "context" (in this case the Spring MVC
-model object) can be rendered using double braces, or "mustaches"
-(&lt;code&gt;{{&lt;/code&gt; and &lt;code&gt;}}&lt;/code&gt;). JMustache also navigates the object graph inside
-variables, so &lt;code&gt;_csrf.token&lt;/code&gt; resolves as the "token" property of the
-"_csrf" object.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Security puts the "_csrf" object into request attributes. To
-get it copied to the MVC model you need a setting in your
-&lt;code&gt;application.properties&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;application.properties&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-properties" data-lang="properties"&gt;spring.mustache.expose-request-attributes=true&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With all that in place, you should find that on visiting the
-application in a browser will first redirect to "/login". Because of
-the weak (non-existent) authentication logic in your handler, you can
-put anything you like in the form and submit it to see the home page.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="admonitionblock note"&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class="icon"&gt;
-&lt;div class="title"&gt;Note&lt;/div&gt;
-&lt;/td&gt;
-&lt;td class="content"&gt;
-in the sample app we have some stylesheets imported via webjars
-to make the app look a little bit nicer, but they don&amp;#8217;t add anything
-to the functionality.
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The sample code has a "base" tag which is an application with all the
-features we have seen so far.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="layout-abstractions-using-includes"&gt;&lt;a class="anchor" href="#layout-abstractions-using-includes"&gt;&lt;/a&gt;Layout Abstractions: Using Includes&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;There are only 2 pages in our application, but even with such a small
-code base there is going to be a quite a bit of duplication in the
-HTML. It is useful to extract some common elements of all pages into
-re-usable templates. One way to do this is with "includes". So we
-could extract the top matter and bottom matter into "header.html":&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;header.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;body&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;and "footer.html"&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;footer.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;(These are intentionally trivial examples. In a real app they would
-probably have a lot of stylesheets, scripts, and meta tags.)&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With those templates we can re-write the home page:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;index.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{&amp;gt;header}}
-    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
-    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;
-{{&amp;gt;footer}}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;and the login form would look similar (just the body of the HTML). In
-these examples you can see the Mustache syntax for "includes", which
-is a bit like a variable, but with an extra "&amp;gt;" in the opening
-tag. The name of the template is resolved in the same way as the view
-templates (so "footer" is mapped to "footer.html" in the "templates"
-directory).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="natural-templates"&gt;&lt;a class="anchor" href="#natural-templates"&gt;&lt;/a&gt;"Natural" Templates&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Some people like to use HTML templates that render on their own and
-can be viewed in a browser. It&amp;#8217;s kind of neat to be able to edit the
-templates and be able to see the result independent of any server or
-application logic. Mustache isn&amp;#8217;t a perfect language for such
-"natural" templates, but it does have one feature that you can use to
-get something approximating it. That feature is "comments".&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;So, for example, you could add a static header and footer to your home
-page template, so that it renders in the browser (almost) as if it was
-in the application. Just surround the static content with Mustache
-comment tags (&lt;code&gt;{{!&lt;/code&gt; and &lt;code&gt;}}&lt;/code&gt;). For example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;index.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{!
-&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;body&amp;gt;
-}}
-{{&amp;gt;header}}
-    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
-    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;
-{{&amp;gt;footer}}
-{{!
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-}}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The browser will still render the Mustache tags as literal braces, but
-you can squint and ignore those, and the rest of the content will be
-layed out exactly as it would be in the application. Obviously, with
-such basic content there isn&amp;#8217;t a huge benefit, but when the content is
-more complex and has styling and scripts it might make more sense.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The sample code has a tag in GitHub called "includes", which is an
-application with all the features we have seen so far.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="layout-abstractions-using-a-lambda"&gt;&lt;a class="anchor" href="#layout-abstractions-using-a-lambda"&gt;&lt;/a&gt;Layout Abstractions: Using a Lambda&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Some people will be perfectly happy with a header and a footer in
-separate templates, but others will moan. To be honest it does feel a
-little awkward to be laying out hierarchical content (HTML), and be
-forced to break elements (like the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag in the sample) across
-multiple files. It would be nicer if we could control the layout in a
-single file, something like this:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;layout.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;body&amp;gt;
-  {{{layout.body}}}
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;and then somehow generate the "body" content in our home page and
-login page.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Mustache allows you to insert generic "executable" content into your
-templates. This is a really powerful feature, and you can use it to
-extract the layout into its own template, as well as to do other
-things that involve a bit of logic. The syntax for that is a generic
-Mustache tag that resolves to something executable. The home
-page would look something like this:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;index.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}
-    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
-    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;\
-{{/layout}}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To make this work you first need an object called "layout" of type
-&lt;code&gt;Mustache.Lambda&lt;/code&gt; in our MVC model. You could do this in your
-controller methods, or (better) use a &lt;code&gt;@ControllerAdvice&lt;/code&gt; to add model
-attributes to all views. For example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;LayoutAdvice.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@ControllerAdvice
-class LayoutAdvice {
-
-  @ModelAttribute("layout")
-  public Mustache.Lambda layout() {
-    return new Layout();
-  }
-
-}
-
-class Layout {
-  String body;
-  @Override
-  public void execute(Fragment frag, Writer out) throws IOException {
-    body = frag.execute();
-  }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Notice that the "layout" attribute renders its body using
-&lt;code&gt;Fragment.execute()&lt;/code&gt; and assigns it to a property called "body", which
-can be referenced as a variable in Mustache. The "layout.html"
-template already contains the code to pull in the body,
-&lt;code&gt;{{{layout.body}}}&lt;/code&gt;, so all that remains is to actually render the
-layout (so far we have only rendered the body). We can do this, in a
-first pass, by importing the layout explicitly into the home
-page:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;index.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}
-    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
-    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;\
-{{/layout}}
-{{&amp;gt;layout}}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Do the same with the login template:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;login.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}
-  &amp;lt;h1&amp;gt;Login&amp;lt;/h1&amp;gt;
-  &amp;lt;form action="/login" method="post"&amp;gt;
-    &amp;lt;label for="username"&amp;gt;Username:&amp;lt;/label&amp;gt;
-    &amp;lt;input type="text" name="username" /&amp;gt;
-    &amp;lt;label for="password"&amp;gt;Password:&amp;lt;/label&amp;gt;
-    &amp;lt;input type="password" name="password" /&amp;gt;
-    &amp;lt;input type="hidden" name="_csrf" value="{{_csrf.token}}" /&amp;gt;
-    &amp;lt;button type="submit" class="btn btn-primary"&amp;gt;Submit&amp;lt;/button&amp;gt;
-  &amp;lt;/form&amp;gt;
-{{/layout}}
-{{&amp;gt;layout}}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;and you are good to go. Everything works, and the app shows the login page and home page with the same layout.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="admonitionblock tip"&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class="icon"&gt;
-&lt;div class="title"&gt;Tip&lt;/div&gt;
-&lt;/td&gt;
-&lt;td class="content"&gt;
-you might have noticed the triple mustaches (&lt;code&gt;{{{&lt;/code&gt; and &lt;code&gt;}}}&lt;/code&gt;) in
-the "layout.html". This is a JMustache feature: all content is escaped
-by default, but this content is going to be rendered twice, so we only
-need it escaped the first time, so we use triple mustaches.
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="rendering-the-layout-in-the-lambda"&gt;&lt;a class="anchor" href="#rendering-the-layout-in-the-lambda"&gt;&lt;/a&gt;Rendering the Layout in the Lambda&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To remove the need for the explicit &lt;code&gt;{{&amp;gt;layout}}&lt;/code&gt; include in every
-page that uses &lt;code&gt;{{#layout}}&lt;/code&gt;, you can do that part inside the
-lambda. You&amp;#8217;ll need a reference to the Mustache compiler, and then you
-just need to compile a template which includes the layout and execute
-it:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Layout.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Layout implements Mustache.Lambda {
-
-  String body;
-
-  private Compiler compiler;
-
-  public Layout(Compiler compiler) {
-    this.compiler = compiler;
-  }
-
-  @Override
-  public void execute(Fragment frag, Writer out) throws IOException {
-    body = frag.execute();
-    compiler.compile("{{&amp;gt;layout}}").execute(frag.context(), out);
-  }
-
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The compiler is wired into the &lt;code&gt;Layout&lt;/code&gt; in its constructor, and it can
-be injected into the controller advice using &lt;code&gt;@Autowired&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;LayoutAdvice.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@ControllerAdvice
-class LayoutAdvice {
-	private final Mustache.Compiler compiler;
-
-	@Autowired
-	public LayoutAdvice(Compiler compiler) {
-		this.compiler = compiler;
-	}
-
-	@ModelAttribute("layout")
-	public Mustache.Lambda layout(Map&amp;lt;String, Object&amp;gt; model) {
-		return new Layout(compiler);
-	}
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;That&amp;#8217;s it. You can remove the include from the view
-templates. E.g. this works for the home page:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;index.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}
-    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
-    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;\
-{{/layout}}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The last line of the old version of the template has effectively been
-moved into the &lt;code&gt;Layout&lt;/code&gt; lambda.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="more-dynamic-content"&gt;&lt;a class="anchor" href="#more-dynamic-content"&gt;&lt;/a&gt;More Dynamic Content&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It&amp;#8217;s quite common for layout templates like the one that we are
-developing to have content that varies between uses. For instance you
-might want the "title" on the home page to be different to that on the
-login page, but it is part of the HTML header, not the body, so
-logically it is part of the layout. Let&amp;#8217;s make that explicit, by
-adding the title to the header of the layout:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;layout.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;head&amp;gt;
-  &amp;lt;title&amp;gt;{{{layout.title}}}&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-  {{{layout.body}}}
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This is a strong hint about how you can implement this feature: the
-layout has a new property called "title", and you can give it a
-default value in the class declaration:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Layout.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Layout implements Mustache.Lambda {
-
-  String body;
-
-  String title = "Demo Application";
-
-  ...
-
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Now, all that remains is to populate that property. Logically, setting
-the title is part of the page view, not the layout, so you&amp;#8217;d like to
-set it in the same place you declare the rest of the page
-content. Other template languages have "parameterised fragments", but
-Mustache is too minimalistic for that. The minimalism is a feature,
-and actually it leads to quite an elegant solution to this
-problem.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;All you have is tags, so you might want to do something like this:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;index.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;{{#layout}}{{#title}}Home Page{{/title}}
-    &amp;lt;h1&amp;gt;Demo&amp;lt;/h1&amp;gt;
-    &amp;lt;div&amp;gt;Hello World&amp;lt;/div&amp;gt;\
-{{/layout}}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;That looks like it might work. All you need to do is provide a lambda
-to capture the title. In the layout advice you can do this:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;LayoutAdvice.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@ControllerAdvice
-class LayoutAdvice {
-
-  ...
-
-  @ModelAttribute("title")
-  public Mustache.Lambda defaults(@ModelAttribute Layout layout) {
-    return (frag, out) -&amp;gt; {
-      layout.title = frag.execute();
-    };
-  }
-
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;and as long as the call to &lt;code&gt;{{#title}}&lt;/code&gt; is nested inside the call to
-&lt;code&gt;{{#layout}}&lt;/code&gt; everything will work out just fine. You cleaned up your
-templates and moved a tiny piece of logic to Java, where it belongs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The sample code is tagged with "layout" at this point, if you want to
-check it out and compare notes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="logout-menus-and-spring-boot-configuration"&gt;&lt;a class="anchor" href="#logout-menus-and-spring-boot-configuration"&gt;&lt;/a&gt;Logout: Menus and Spring Boot Configuration&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can load a home page and log into your application using a
-form. The user can&amp;#8217;t yet log out, so you probably want to add that
-feature, ideally as a link on all pages, so that makes it part of the
-layout. To show how that works, let&amp;#8217;s add a generic, declarative menu
-bar to the application, and make one part of it a logout button.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The logout link is actually pretty easy. We only need a form with the
-CSRF token and a link to submit it, e.g:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;layout.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;head&amp;gt;
-  &amp;lt;title&amp;gt;{{{layout.title}}}&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-  &amp;lt;form id="logout" action="/logout" method="post"&amp;gt;
-    &amp;lt;input type="hidden" name="_csrf" value="{{_csrf.token}}" /&amp;gt;
-    &amp;lt;button type="submit" class="btn btn-primary"&amp;gt;Logout&amp;lt;/button&amp;gt;
-  &amp;lt;/form&amp;gt;
-  {{{layout.body}}}
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;That already should work. But lets incorporate the logout into a more
-generic set of menu links. A list of elements in HTML can be
-represented as a &lt;code&gt;&amp;lt;ul/&amp;gt;&lt;/code&gt; with nested &lt;code&gt;&amp;lt;li/&amp;gt;&lt;/code&gt;, so the menus for your
-application can be rendered that way. In Mustache you do iteration
-just like lambdas, using a tag, so let&amp;#8217;s invent a new one called
-&lt;code&gt;{{#menus}}&lt;/code&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;layout.html&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;&amp;lt;!doctype html&amp;gt;
-&amp;lt;html lang="en"&amp;gt;
-&amp;lt;head&amp;gt;
-  &amp;lt;title&amp;gt;{{{layout.title}}}&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-  &amp;lt;ul class="nav nav-pills" role="tablist"&amp;gt;
-    {{#menus}}&amp;lt;li&amp;gt;&amp;lt;a href="{{path}}"&amp;gt;{{name}}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;{{/menus}}
-    &amp;lt;li&amp;gt;&amp;lt;a href="#" onclick="document.getElementById('#logout').submit()"&amp;gt;Logout&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
-  &amp;lt;/ul&amp;gt;
-  {{{layout.body}}}
-  &amp;lt;form id="logout" action="/logout" method="post"&amp;gt;
-    &amp;lt;input type="hidden" name="_csrf" value="{{_csrf.token}}" /&amp;gt;
-  &amp;lt;/form&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Notice that inside the &lt;code&gt;{{#menus}}&lt;/code&gt; tag we pull out variables, "name"
-and "path" using the normal Mustache syntax.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Now you have to define the tag in your controller advice (or
-equivalently in the controllers), so that "menus" resolves to an
-iterable:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;LayoutAdvice.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@ModelAttribute("menus")
-public Iterable&amp;lt;Menu&amp;gt; menus() {
-  return application.getMenus();
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;So this new code introduced a &lt;code&gt;Menu&lt;/code&gt; type that contains the static
-content for each menu in the UI. The layout calls for "name" and
-"path", so you need those properties:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Menu.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;class Menu {
-  private String name;
-  private String path;
-  // ... getters and setters
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In the layout advice above the menus came from an &lt;code&gt;application&lt;/code&gt;
-object. That wasn&amp;#8217;t strictly necessary: you could have declared the
-list of menus inline in the &lt;code&gt;menus()&lt;/code&gt; method, but extracting it into
-another object gives us the chance to use a nice Spring Boot feature,
-where we can declare the menus in a config file in a compact format.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;So now you need to create the &lt;code&gt;Application&lt;/code&gt; object to hold the menus,
-and inject it into the layout advice:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Layout.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;private Application application;
-
-@Autowired
-public LayoutAdvice(Compiler compiler, Application application) {
-  this.compiler = compiler;
-  this.application = application;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;where in &lt;code&gt;Application&lt;/code&gt; you have something like this&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;Application.java&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-html" data-lang="html"&gt;@Component
-@ConfigurationProperties("app")
-class Application {
-  private List&amp;lt;Menu&amp;gt; menus = new ArrayList&amp;lt;&amp;gt;();
-  // .. getters and setters
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;code&gt;@ConfigurationProperties&lt;/code&gt; tells Spring Boot to bind to this bean
-from the environment. Switching from &lt;code&gt;application.properties&lt;/code&gt; to
-&lt;code&gt;application.yml&lt;/code&gt; you could create a "Home" and a "Login" menu like
-this:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="title"&gt;application.yml&lt;/div&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;app.menus:
-  - name: Home
-    path: /
-  - name: Login
-    path: /login&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With this in place, the "layout.html" that you already defined now has
-all it needs to work.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The sample code is tagged with "menus" at this point in github, if you
-want to check it out and compare notes. It&amp;#8217;s also the final state, so
-it&amp;#8217;s the same code in master, possibly with bug fixes and updates to
-libraries. I hope you enjoy using Mustache as much as I do.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="footnote"&gt;&lt;a class="anchor" href="#footnote"&gt;&lt;/a&gt;Footnote&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The sample has one or two extra features on top of the code in the
-text. One of which is that the "active" menu is rendered differently
-to the others using a CSS style. For that to work, you need to add a
-flag to the &lt;code&gt;Menu&lt;/code&gt; and reset it in the layout advice. The logic is
-natural and easy to add to the advice. Another is that the title for
-the page is part of the menu definition instead of being a separate
-lambda.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: Building applications with Angular JS and Spring Security</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/11/21/springone-platform-2016-replay-building-applications-with-angular-js-and-spring-security" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-11-30:2714</id>
-    <updated>2016-11-21T10:35:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Dr. David Syer&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/building-applications-with-angular-js-and-spring-security"&gt;http://www.slideshare.net/SpringCentral/building-applications-with-angular-js-and-spring-security&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In this presentation we show some nice features of Spring Security, Spring Boot and Angular JS working together to provide a pleasant and secure user experience. Things to consider are cookies, headers, native clients, various security vulnerabilities and how modern browser technology can help us to avoid them. In this series we show how nicely features of the component frameworks can be integrated simply to provide a pleasant and secure user experience. We start with a very basic single-server implementation and scale it up in stages, splitting out backend resources and authentication to separate services.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/x3pYcp1LopU" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: To Spring Security 4.1 and Beyond</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/11/16/springone-platform-2016-replay-to-spring-security-4-1-and-beyond" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-11-16:2699</id>
-    <updated>2016-11-16T12:22:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speakers: Rob Winch, Joe Grandja&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/to-spring-security-41-and-beyond"&gt;http://www.slideshare.net/SpringCentral/to-spring-security-41-and-beyond&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Exploits are continually evolving making security hard. This is compounded by the fact that the technologies we need to secure are a moving target.&lt;/p&gt;
-&lt;p&gt;In this talk we will discuss how to easily secure an application with Spring Security 4.1. We will focus on some of the new features found in Spring Security 4.1 and discuss the future direction of Spring Security.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/H94Wbd8ARKM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>
