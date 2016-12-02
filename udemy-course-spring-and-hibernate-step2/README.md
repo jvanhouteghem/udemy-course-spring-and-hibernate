@@ -208,6 +208,10 @@ Output :
 
 II. Setter Injection
 
+2 steps : 
+- Create setter method(s) in your class for injection
+- Configure the dependency injection in Spring config file
+
 NB : A <property name="bestAthlete" (...) > will call the setter public void setBestAthlete(...
 )
 
@@ -238,19 +242,19 @@ public class CricketCoach implements Coach {
 
 	private FortuneService fortuneService;
 
-	// create a no-arg constructor (new)
+	// create a no-arg constructor
 	public CricketCoach(){
 		System.out.println("CricketCoach : inside no-arg constructor");
 	}
 	
-	// our setter method used by Spring (new) 
+	// our setter method used by Spring 
 	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println("CricketCoach : inside setter method - setFortuneService");
 		this.fortuneService = fortuneService;
 	}
 
 	@Override
 	public String getDailyWorkout() {
-		System.out.println("CricketCoach : inside setter method - setFortuneService");
 		return "Practice fast bowling for 15 minutes";
 	}
 
@@ -261,3 +265,74 @@ public class CricketCoach implements Coach {
 
 }
 ```
+
+3) Configure the dependency injection in Spring config file
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--  define the dependency -->
+	<bean id="myFortune"
+		class="com.jvanhouteghem.springdemo.HappyFortuneService">
+	</bean>
+
+    <!-- Define your beans here -->
+    <bean id="myCoach" 
+    	class="com.jvanhouteghem.springdemo.TrackCoach">
+    	<!--  set up constructor injection -->
+    	<constructor-arg ref="myFortune"/>
+    </bean>
+    
+    <bean id="myCricketCoach"
+    	class="com.jvanhouteghem.springdemo.CricketCoach">
+ 		
+ 		<!--  set up setter injection -->
+ 		<!--  NB : ref value must be equals to our id in line 11 -->
+ 		<!--  NB : name="fortuneService" will call setFortuneService(...) -->
+ 		<property name="fortuneService" ref="myFortuneService"></property>
+ 			
+    </bean>
+
+</beans>
+```
+
+4) Create a new app class for this demo
+
+```java
+public class SetterDemoApp {
+
+	public static void main(String[] args) {
+
+		// load the spring configuration file
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		// retrieve bean from spring container
+		CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
+		
+		// call methods on the bean
+		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());
+		// close the context
+		context.close();
+		
+	}
+
+}
+```
+
+Output : 
+
+```
+>>> CricketCoach : inside no-arg constructor
+>>> CricketCoach : inside setter method - setFortuneService
+>>> Practice fast bowling for 15 minutes
+>>> Today is your lucky day!
+```
+
