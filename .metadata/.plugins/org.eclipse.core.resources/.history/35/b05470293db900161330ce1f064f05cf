@@ -4,7 +4,7 @@ public class CricketCoach implements Coach {
 
 	private FortuneService fortuneService;
 	
-	// add new fields for emailAddress and team (new)
+	// add new fields fr emailAddress and team (new)
 	private String emailAdress;
 	private String team;
 

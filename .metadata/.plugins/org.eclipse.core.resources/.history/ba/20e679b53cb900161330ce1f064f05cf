@@ -26,11 +26,7 @@
  		<!--  NB : ref value must be equals to our id in line 11 -->
  		<!--  NB : name="fortuneService" will call setFortuneService(...) -->
  		<property name="fortuneService" ref="myFortuneService"></property>
- 		
- 		<!--  inject litteral values -->
- 		<!--  NB : property name "emailAdress" will call  setEmailAdress(...) -->
- 		<property name="emailAdress" value="jvanhouteghem@mail.com"></property>
- 		<property name="team" value="Sunrisers Hyderabad"></property>	
+ 			
     </bean>
     
 </beans>

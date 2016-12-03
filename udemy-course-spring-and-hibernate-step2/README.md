@@ -342,4 +342,150 @@ III. Injecting literal values
 - Create setter method(s) in your class for injections
 - Configure the injection in Spring config file
 
-A) Update Cricket
+A. Simple example
+
+1) Update CricketCoach
+
+Steps : 
+- create private fields
+- add getter and setter
+
+```java
+
+public class CricketCoach implements Coach {
+
+	private FortuneService fortuneService;
+	
+	// add new fields fr emailAddress and team 
+	private String emailAdress; // (new)
+	private String team; // (new)
+
+	// (new)
+	public String getEmailAdress() { 
+		return emailAdress;
+	}
+
+	// (new)
+	public void setEmailAdress(String emailAdress) {
+		System.out.println("CricketCoach : inside setter method - setEmailAdress");
+		this.emailAdress = emailAdress;
+	}
+
+	// (new)
+	public String getTeam() {
+		return team;
+	}
+
+	// (new)
+	public void setTeam(String team) {
+		System.out.println("CricketCoach : inside setter method - setTeam");
+		this.team = team;
+	}
+
+	// create a no-arg constructor
+	public CricketCoach(){
+		System.out.println("CricketCoach : inside no-arg constructor");
+	}
+	
+	// our setter method used by Spring 
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println("CricketCoach : inside setter method - setFortuneService");
+		this.fortuneService = fortuneService;
+	}
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice fast bowling for 15 minutes";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+}
+```
+
+2) Configure the injection in Spring config file
+
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--  define the dependency -->
+	<bean id="myFortuneService"
+		class="com.jvanhouteghem.springdemo.HappyFortuneService">
+	</bean>
+
+    <!-- Define your beans here -->
+    <bean id="myCoach" 
+    	class="com.jvanhouteghem.springdemo.TrackCoach">
+    	<!--  set up constructor injection -->
+    	<constructor-arg ref="myFortuneService"/>
+    </bean>
+    
+    <bean id="myCricketCoach"
+    	class="com.jvanhouteghem.springdemo.CricketCoach">
+ 		
+ 		<!--  set up setter injection -->
+ 		<!--  NB : ref value must be equals to our id in line 11 -->
+ 		<!--  NB : name="fortuneService" will call setFortuneService(...) -->
+ 		<property name="fortuneService" ref="myFortuneService"></property>
+ 		
+		<!--  inject litteral values (new) -->
+ 		<!--  NB : property name "emailAdress" will call  setEmailAdress(...) -->
+ 		<property name="emailAdress" value="jvanhouteghem@mail.com"></property>
+ 		<property name="team" value="Sunrisers Hyderabad"></property>	
+    </bean>
+    
+</beans>
+```
+
+3) Update SetterDemoApp
+
+```java
+public class SetterDemoApp {
+
+	public static void main(String[] args) {
+
+		// load the spring configuration file
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		
+		// retrieve bean from spring container
+		CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
+		
+		// call methods on the bean
+		System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());
+		
+		// call our new methods to get literal values (new)
+		System.out.println(theCoach.getEmailAdress());
+		System.out.println(theCoach.getTeam());
+		
+		// close the context
+		context.close();
+		
+	}
+
+}
+```
+
+Output :
+```
+>>> INFOS: Loading XML bean definitions from class path resource [applicationContext.xml]
+>>> CricketCoach : inside no-arg constructor
+>>> CricketCoach : inside setter method - setFortuneService
+>>> CricketCoach : inside setter method - setEmailAdress
+>>> CricketCoach : inside setter method - setTeam
+>>> Practice fast bowling for 15 minutes
+>>> Today is your lucky day!
+>>> jvanhouteghem@mail.com
+>>> Sunrisers Hyderabad
+```
