@@ -8,6 +8,7 @@ There is 2 Spring Injection Types :
 - Setter Injection
 
 I. Constructor Injection
+---
 
 Summary : 
 - Define the dependency interface and class
@@ -337,6 +338,7 @@ Output :
 ```
 
 III. Injecting literal values
+---
 
 2 steps : 
 - Create setter method(s) in your class for injections
@@ -488,4 +490,80 @@ Output :
 >>> Today is your lucky day!
 >>> jvanhouteghem@mail.com
 >>> Sunrisers Hyderabad
+```
+
+B. Injecting literal values from a properties file
+
+In the previous example we saw how to inject literal value, the problem is that these values are hardcoded in the config file.
+Now we want to read these informations from an external properties file.
+
+Steps :
+- Create properties file
+- Load properties file in Spring config file
+- Reference values from properties file
+
+1) Create properties file named sport.properties in ressources folder
+
+```
+foo.email=jvanhouteghem@emailfromproperties.com
+foo.team= Royal Challengers Bangalore
+```
+
+2) Load properties file in Spring config file and reference values from properties file
+
+Update applicationContext :
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--  loads the properties file : sport.properties (new) -->
+	<context:property-placeholder location="classpath:sport.properties"/>
+	
+	<!--  define the dependency -->
+	<bean id="myFortuneService"
+		class="com.jvanhouteghem.springdemo.HappyFortuneService">
+	</bean>
+
+    <!-- Define your beans here -->
+    <bean id="myCoach" 
+    	class="com.jvanhouteghem.springdemo.TrackCoach">
+    	<!--  set up constructor injection -->
+    	<constructor-arg ref="myFortuneService"/>
+    </bean>
+    
+    <bean id="myCricketCoach"
+    	class="com.jvanhouteghem.springdemo.CricketCoach">
+ 		
+ 		<!--  set up setter injection -->
+ 		<property name="fortuneService" ref="myFortuneService"></property>
+ 		
+		 <!--  inject litteral values (update) -->
+ 		<property name="emailAdress" value="${foo.email}"></property>
+ 		<property name="team" value="${foo.team}"></property>	
+    </bean>
+    
+</beans>
+```
+
+Output : 
+
+```
+>>> INFOS: Loading XML bean definitions from class path resource [applicationContext.xml]
+>>> déc. 03, 2016 1:55:37 PM org.springframework.context.support.PropertySourcesPlaceholderConfigurer loadProperties
+>>> INFOS: Loading properties file from class path resource [sport.properties]
+>>> CricketCoach : inside no-arg constructor
+>>> CricketCoach : inside setter method - setFortuneService
+>>> CricketCoach : inside setter method - setEmailAdress
+>>> CricketCoach : inside setter method - setTeam
+>>> Practice fast bowling for 15 minutes
+>>> Today is your lucky day!
+>>> jvanhouteghem@emailfromproperties.com
+>>>Royal Challengers Bangalore
 ```

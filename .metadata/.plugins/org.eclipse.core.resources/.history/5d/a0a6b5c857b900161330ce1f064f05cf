@@ -32,8 +32,8 @@
  		
  		<!--  inject litteral values -->
  		<!--  NB : property name "emailAdress" will call  setEmailAdress(...) -->
- 		<property name="emailAdress" value="${foo.email}"></property>
- 		<property name="team" value="${foo.team}"></property>	
+ 		<property name="emailAdress" value="jvanhouteghem@mail.com"></property>
+ 		<property name="team" value="Sunrisers Hyderabad"></property>	
     </bean>
     
     
