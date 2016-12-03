@@ -336,3 +336,10 @@ Output :
 >>> Today is your lucky day!
 ```
 
+III. Injecting literal values
+
+2 steps : 
+- Create setter method(s) in your class for injections
+- Configure the injection in Spring config file
+
+A) Update Cricket
