@@ -1,0 +1,12 @@
+package com.jvanhouteghem.springdemoannotations;
+
+@Component
+public class RandomService implements FortuneService {
+
+	@Override
+	public String getFortune() {
+		
+		return null;
+	}
+
+}

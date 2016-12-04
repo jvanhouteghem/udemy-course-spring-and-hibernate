@@ -296,6 +296,8 @@ How it works ?
 - Any one implements FortuneService interface ???
 - If so, let's inject them. For example : HappyFortuneService
 
+Which injection type should you use ? Choose a style and stay consistent in your project.
+
 2 steps : 
 - Create setter method(s) in your class for injections
 - Configure the dependency injection with @Autowired Annotation
@@ -411,6 +413,253 @@ Its happens behind the scene with java technology called Java reflection.
 
 This applied directly to the field.
 No need for setter methods.
+
+1) Modify TennisCoach by adding @Autowired above the FortuneService field
+
+```java
+@Component
+public class TennisCoach implements CoachAnnotations {
+	
+	// (new)
+	@Autowired
+	private FortuneService fortuneService;
+	
+	// define a default constructor
+	public TennisCoach(){
+		System.out.println("TennisCoach : inside default constructor");
+	}
+	
+	// define a setter method
+	/*@Autowired
+	public void doSomeCrazyStuff(FortuneService theFortuneService){
+		System.out.println("TennisCoach : inside doSomeCrazyStuff() method");
+		fortuneService = theFortuneService;
+	}*/
+	
+	/*
+	@Autowired
+	public TennisCoach (FortuneService theFortuneService){
+		fortuneService = theFortuneService;
+	}*/
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your backhand volley";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+}
+```
+
+IV. Qualifier
+---
+
+### A. Qualifier for dependency injection : hardcode example
+
+If there is multiple implementation ? NoUniqueBeanDefinitionException
+
+Can apply @Qualifier annotation to : 
+- constructor injection
+- setter injection methods
+- field injection
+
+1) Create new class RandomService
+
+```java
+import org.springframework.stereotype.Component;
+
+@Component
+public class RandomService implements FortuneService {
+
+	@Override
+	public String getFortune() {
+		return null;
+	}
+
+}
+```
+
+2) Create DatabaseFortuneService
+
+```java
+import org.springframework.stereotype.Component;
+
+@Component
+public class DatabaseFortuneService implements FortuneService {
+
+	@Override
+	public String getFortune() {
+		return null;
+	}
+
+}
+```
+
+3) Create RESTFortuneService
+
+```java
+import org.springframework.stereotype.Component;
+
+@Component
+public class RESTFortuneService implements FortuneService {
+
+	@Override
+	public String getFortune() {
+		return null;
+	}
+
+}
+```
+
+So we have now 4 implementations of FortuneService : 
+- HappyFortuneService
+- RandomFortuneService
+- DatabaseFortuneService
+- RESTFortuneService
+
+If we launch the Annotatio,emoApp
+
+```
+>>> No qualifying bean of type [com.jvanhouteghem.springdemoannotations.FortuneService] is defined: expected single matching bean but found 4: databaseFortuneService,happyFortuneService,randomService,RESTFortuneService
+```
+
+4) Modify TennisCoach
+
+```java
+@Component
+public class TennisCoach implements CoachAnnotations {
+	
+	@Autowired
+	@Qualifier("happyFortuneService") // (new)
+	private FortuneService fortuneService;
+	
+	// define a default constructor
+	public TennisCoach(){
+		System.out.println("TennisCoach : inside default constructor");
+	}
+	
+	// define a setter method
+	/*@Autowired
+	public void doSomeCrazyStuff(FortuneService theFortuneService){
+		System.out.println("TennisCoach : inside doSomeCrazyStuff() method");
+		fortuneService = theFortuneService;
+	}*/
+	
+	/*
+	@Autowired
+	public TennisCoach (FortuneService theFortuneService){
+		fortuneService = theFortuneService;
+	}*/
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your backhand volley";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+}
+```
+
+Output : 
+```
+>>> TennisCoach : inside default constructor
+>>> Practice your backhand volley
+>>> Today is your lucky day
+```
+
+### B. Qualifier for dependency injection : add code for random FortuneService
+
+In the previous example we hardcoded to use one FortuneService everytime. Let's mix it up.
+
+1) Refactor : rename the class RandomService to RandomFortuneService and update it : 
+
+```java
+@Component
+public class RandomFortuneService implements FortuneService {
+
+	// create an array of strings (new)
+	private String[] data = {
+			"Beware of the wolf in sheep's clothing",
+			"Diligence is the mother of good luck",
+			"The journey is the reward"
+	};
+	
+	// create a random number generator (new)
+	private Random myRandom = new Random();
+	
+	
+	@Override
+	public String getFortune() {
+		
+		// pick a random string from the array (new)
+		int index = myRandom.nextInt(data.length);
+		
+		String theFortune = data[index]; // (new)
+		
+		return theFortune; //(new)
+	}
+
+}
+
+```
+
+2) Modify TennisCoach
+
+```java
+@Component
+public class TennisCoach implements CoachAnnotations {
+	
+	@Autowired
+	@Qualifier("randomFortuneService") // (update : rename happyFortuneService to randomFortuneService)
+	private FortuneService fortuneService;
+	
+	// define a default constructor
+	public TennisCoach(){
+		System.out.println("TennisCoach : inside default constructor");
+	}
+	
+	// define a setter method
+	/*@Autowired
+	public void doSomeCrazyStuff(FortuneService theFortuneService){
+		System.out.println("TennisCoach : inside doSomeCrazyStuff() method");
+		fortuneService = theFortuneService;
+	}*/
+	
+	/*
+	@Autowired
+	public TennisCoach (FortuneService theFortuneService){
+		fortuneService = theFortuneService;
+	}*/
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your backhand volley";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+}
+```
+
+One of the possible outputs : 
+```
+>>> TennisCoach : inside default constructor
+>>> Practice your backhand volley
+>>> The journey is the reward
+```
+
+
 
 
 
