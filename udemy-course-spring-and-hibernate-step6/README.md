@@ -172,4 +172,133 @@ Output :
 
 ### B. Injecting value from properties file
 
+Development process : 
+- Create properties file
+- Load properties files in Spring config (by using @PropertySource)
+- Reference values from Properties file (with @Value)
 
+1) Create new file named sport.properties
+
+```
+foo.email=jvanhouteghem@emailfrompropertiesjavacode.com
+foo.team= Mighty Java Coders
+```
+
+2) Load properties files in Spring config 
+
+Update SportConfig :
+
+```java
+
+@Configuration
+//@ComponentScan("com.jvanhouteghem.springdemoannotations")
+@PropertySource("classpath:sport.properties") // (new)
+public class SportConfig {
+	
+	// add support to resolve ${...} properties (new)
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer
+		propertySourcesPlaceholderConfigurer(){
+			return new PropertySourcesPlaceholderConfigurer();
+	}
+	
+	// define bean for our sad fortune service
+	@Bean
+	public FortuneService sadFortuneService(){
+		return new SadFortuneService();
+	}
+	
+	// define bean for our swim coach AND inject dependency
+	@Bean
+	public CoachAnnotations swimCoach(){
+		return new SwimCoach(sadFortuneService());
+	}
+	
+}
+
+```
+
+3) Reference values from Properties file
+
+Update SwimCoach : 
+
+```java
+public class SwimCoach implements CoachAnnotations {
+
+	private FortuneService fortuneService;
+	
+	@Value("${foo.email}") // new
+	private String email;
+	
+	@Value("${foo.team}") // new
+	private String team;
+	
+	public SwimCoach(FortuneService theFortuneService){
+		fortuneService = theFortuneService;
+	}
+	
+	@Override
+	public String getDailyWorkout() {
+		return "Swim 1000 meters as a warm up";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+	
+	public String getEmail() { // new
+		return email;
+	}
+
+	public String getTeam() { // new
+		return team;
+	}
+
+}
+```
+
+4) Update SwimJavaConfigDemoApp
+
+```
+public class SwimJavaConfigDemoApp {
+
+	public static void main(String[] args) {
+		
+		// read spring config java class
+		AnnotationConfigApplicationContext context = 
+				new AnnotationConfigApplicationContext(SportConfig.class);
+		
+		// get the bean from spring container
+		SwimCoach theCoach = context.getBean("swimCoach", SwimCoach.class);
+		
+		// call a method on the bean
+		System.out.println(theCoach.getDailyWorkout());
+		
+		// call method to get the daily fortune
+		System.out.println(theCoach.getDailyFortune());
+		
+		// call our new swim coach methods ... has the props value injected
+		System.out.println("email : " + theCoach.getEmail());
+		System.out.println("team : " + theCoach.getTeam() );
+		
+		// close the context
+		context.close();
+	}
+
+}
+```
+
+Output : 
+
+```
+>>> déc. 05, 2016 12:11:09 AM org.springframework.context.annotation.AnnotationConfigApplicationContext prepareRefresh
+>>> INFOS: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@300ffa5d: startup date [Mon Dec 05 00:11:09 CET 2016]; root of context hierarchy
+>>> Swim 1000 meters as a warm up
+>>> Today is a sad day
+>>> email : jvanhouteghem@emailfrompropertiesjavacode.com
+>>> team : Mighty Java Coders
+>>> déc. 05, 2016 12:11:09 AM org.springframework.context.annotation.AnnotationConfigApplicationContext doClose
+>>> INFOS: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@300ffa5d: startup date [Mon Dec 05 00:11:09 CET 2016]; root of context hierarchy
+
+```
