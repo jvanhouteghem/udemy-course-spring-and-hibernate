@@ -2,7 +2,6 @@ package com.jvanhouteghem.springdemoannotations;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-
 public class AnnotationDemoApp {
 
 	public static void main(String[] args) {

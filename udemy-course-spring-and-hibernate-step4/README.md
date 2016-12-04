@@ -1,6 +1,6 @@
 # udemy-course-spring-and-hibernate
 
-Step 4 : Spring Configuration with Java Annotations - Inversion of Control
+Step 4 : Spring Inversion of Control - Java Annotations
 ---
 
 What are java annotations ?
@@ -100,6 +100,59 @@ Output :
 >>> INFOS: Loading XML bean definitions from class path resource [applicationContextAnnotations.xml]
 >>> Practice your backhand volley
 ```
+
+II. Default Component Names
+---
+
+Spring also supports default bean IDs which is the class name with first letter in lower-case.
+
+TennisCoach (the class name) --> tennisCoach (default bean ID)
+
+A. Update TennisCoach by removing @Component("thatSillyCoach")
+
+```java
+package com.jvanhouteghem.springdemoannotations;
+
+import org.springframework.stereotype.Component;
+
+//@Component("thatSillyCoach") 
+// Now this use the default bean id "tennisCoach"
+public class TennisCoach implements CoachAnnotations {
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your backhand volley";
+	}
+
+}
+```
+
+B. Retrieve the bean - Update AnnotationDemoApp
+
+```java
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class AnnotationDemoApp {
+
+	public static void main(String[] args) {
+		
+		// read spring config file
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContextAnnotations.xml");
+		
+		// get the bean from spring container (update)
+		CoachAnnotations theCoach = context.getBean("tennisCoach", CoachAnnotations.class);
+		
+		// call a method on the bean
+		System.out.println(theCoach.getDailyWorkout());
+		
+		// close the context
+		context.close();
+	}
+
+}
+```
+
+
 
 
 

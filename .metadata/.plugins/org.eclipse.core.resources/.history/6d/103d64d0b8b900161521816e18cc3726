@@ -1,6 +1,6 @@
 package com.jvanhouteghem.springdemoannotations;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.*;
 
 
 public class AnnotationDemoApp {

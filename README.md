@@ -12,4 +12,4 @@ Summary
 - Step 1 : Spring Inversion of Control - XML Configuration
 - Step 2 : Spring Dependency Injection - XML Configuration
 - Step 3 : Spring Bean Scopes and Lifecycle
-- Step 4 : Spring Configuration with Java Annotations - Inversion of Control
+- Step 4 : Spring Inversion of Control - Java Annotations
