@@ -1,6 +1,6 @@
 # udemy-course-spring-and-hibernate
 
-Step 3 : Spring Dependency Injection - XML Configuration
+Step 3 : Spring Bean Scopes and Lifecycle
 ---
 
 Scope refers to the lifecycle of a bean.
