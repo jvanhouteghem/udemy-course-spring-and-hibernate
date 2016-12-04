@@ -1,6 +1,0 @@
-INDEX VERSION 1.127+C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\.metadata\.plugins\org.eclipse.jdt.core
-1414167036.index
-2723062883.index
-507176670.index
-2390956981.index
-1261240662.index

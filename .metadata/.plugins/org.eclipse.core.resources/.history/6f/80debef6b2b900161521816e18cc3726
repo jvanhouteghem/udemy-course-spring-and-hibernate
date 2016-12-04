@@ -1,7 +1,0 @@
-package com.jvanhouteghem.springdemoannotations;
-
-public interface Coach {
-	
-	public String getDailyWorkout
-
-}

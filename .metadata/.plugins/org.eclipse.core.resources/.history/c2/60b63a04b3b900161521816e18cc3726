@@ -1,5 +1,0 @@
-package com.jvanhouteghem.springdemoannotations;
-
-public interface CoachAnnotations {
-
-}
