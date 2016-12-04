@@ -3080,3 +3080,797 @@ java.lang.NullPointerException
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:31:17.430
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:40:45.767
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:40:45.770
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:19.599
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:19.602
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:21.067
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:21.080
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:35.578
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:35.581
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:50.734
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:50.737
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:52.058
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 01:41:52.072
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2016-12-04 12:48:19.209 -----------------------------------------------
+eclipse.buildId=4.5.1.M20150904-0015
+java.version=1.8.0_77
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.springframework.ide.eclipse.boot.dash 4 0 2016-12-04 12:48:36.067
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.dash [1123]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot.dash [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot.dash"; type="osgi.bundle"; version:Version="3.8.2.201610040608-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.handler' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.101.v20150820-1432"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot.dash [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot.dash"; type="osgi.bundle"; version:Version="3.8.2.201610040608-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.101.v20150820-1432"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot.dash [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot.dash"; type="osgi.bundle"; version:Version="3.8.2.201610040608-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.0.20160611-RELEASE"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.0.20160611-RELEASE"]
+    import: (&(osgi.wiring.package=javax.xml.ws.handler)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.handler
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-12-04 12:49:07.959
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Staelen'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:50:47.199
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:50:47.214
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:50:55.769
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:50:55.776
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:52:34.668
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:52:34.676
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:54:07.861
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:54:07.869
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:55:49.669
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:55:49.673
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:56:00.814
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:56:00.818
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:56:07.275
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:56:07.280
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:56:10.566
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:56:10.572
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:56:24.058
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 12:56:24.061
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:14:59.509
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:14:59.513
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:16:30.803
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:16:30.806
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:16:33.158
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:16:33.160
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.591
+!MESSAGE Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:309)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.592
+!MESSAGE Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.754
+!MESSAGE Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:310)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.754
+!MESSAGE Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.761
+!MESSAGE Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2166)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:384)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:311)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.761
+!MESSAGE Launch configuration HelloSpringApp (1) references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.767
+!MESSAGE Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:309)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.768
+!MESSAGE Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.772
+!MESSAGE Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:310)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.772
+!MESSAGE Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.777
+!MESSAGE Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2166)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:384)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:311)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.777
+!MESSAGE Launch configuration MyApp (1) references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.781
+!MESSAGE Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:309)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.781
+!MESSAGE Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.785
+!MESSAGE Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:310)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.785
+!MESSAGE Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-12-04 13:16:39.791
+!MESSAGE Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+!STACK 1
+org.eclipse.core.runtime.CoreException: Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2166)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:384)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:311)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.launching 4 124 2016-12-04 13:16:39.792
+!MESSAGE Launch configuration SetterDemoApp references closed project udemy-course-spring-and-hibernate-step2
+
+!ENTRY org.eclipse.core.resources 4 4 2016-12-04 13:16:41.447
+!MESSAGE Exception loading preferences from: /udemy-course-spring-and-hibernate-step3/.settings/org.eclipse.jdt.core.prefs.
+!STACK 1
+org.eclipse.core.runtime.CoreException: File not found: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.eclipse.jdt.core.prefs.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:391)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:507)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:670)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.resources.ProjectScope.getNode(ProjectScope.java:68)
+	at org.eclipse.core.internal.preferences.PreferencesService$5.run(PreferencesService.java:613)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.preferences.PreferencesService.getNodes(PreferencesService.java:607)
+	at org.eclipse.core.internal.preferences.PreferencesService.getString(PreferencesService.java:676)
+	at org.eclipse.jdt.apt.core.util.AptConfig.getString(AptConfig.java:874)
+	at org.eclipse.jdt.apt.core.util.AptConfig.isEnabled(AptConfig.java:718)
+	at org.eclipse.jdt.apt.core.internal.generatedfile.GeneratedResourceChangeListener.addGeneratedSrcFolderTo(GeneratedResourceChangeListener.java:121)
+	at org.eclipse.jdt.apt.core.internal.generatedfile.GeneratedResourceChangeListener.resourceChanged(GeneratedResourceChangeListener.java:92)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState$1.run(DeltaProcessingState.java:472)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.resourceChanged(DeltaProcessingState.java:467)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:152)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:359)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.FileNotFoundException: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.eclipse.jdt.core.prefs (Le chemin d’accès spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	... 27 more
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2016-12-04 13:16:41.448
+!MESSAGE File not found: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.eclipse.jdt.core.prefs.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.eclipse.jdt.core.prefs (Le chemin d’accès spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:507)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:670)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.resources.ProjectScope.getNode(ProjectScope.java:68)
+	at org.eclipse.core.internal.preferences.PreferencesService$5.run(PreferencesService.java:613)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.preferences.PreferencesService.getNodes(PreferencesService.java:607)
+	at org.eclipse.core.internal.preferences.PreferencesService.getString(PreferencesService.java:676)
+	at org.eclipse.jdt.apt.core.util.AptConfig.getString(AptConfig.java:874)
+	at org.eclipse.jdt.apt.core.util.AptConfig.isEnabled(AptConfig.java:718)
+	at org.eclipse.jdt.apt.core.internal.generatedfile.GeneratedResourceChangeListener.addGeneratedSrcFolderTo(GeneratedResourceChangeListener.java:121)
+	at org.eclipse.jdt.apt.core.internal.generatedfile.GeneratedResourceChangeListener.resourceChanged(GeneratedResourceChangeListener.java:92)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState$1.run(DeltaProcessingState.java:472)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.resourceChanged(DeltaProcessingState.java:467)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:152)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:359)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.preferences 4 4 2016-12-04 13:16:41.559
+!MESSAGE Exception loading preferences from: C:/Users/Staelen/Desktop/udemy-course-spring-and-hibernate/udemy-course-spring-and-hibernate-step3/.settings/org.eclipse.jdt.core.prefs.
+!STACK 0
+org.osgi.service.prefs.BackingStoreException: Exception loading preferences from: /udemy-course-spring-and-hibernate-step3/.settings/org.eclipse.jdt.core.prefs.
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:515)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:670)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.resources.ProjectScope.getNode(ProjectScope.java:68)
+	at org.eclipse.core.internal.preferences.PreferencesService$5.run(PreferencesService.java:613)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.preferences.PreferencesService.getNodes(PreferencesService.java:607)
+	at org.eclipse.core.internal.preferences.PreferencesService.getString(PreferencesService.java:676)
+	at org.eclipse.jdt.apt.core.util.AptConfig.getString(AptConfig.java:874)
+	at org.eclipse.jdt.apt.core.util.AptConfig.isEnabled(AptConfig.java:718)
+	at org.eclipse.jdt.apt.core.internal.generatedfile.GeneratedResourceChangeListener.addGeneratedSrcFolderTo(GeneratedResourceChangeListener.java:121)
+	at org.eclipse.jdt.apt.core.internal.generatedfile.GeneratedResourceChangeListener.resourceChanged(GeneratedResourceChangeListener.java:92)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState$1.run(DeltaProcessingState.java:472)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.resourceChanged(DeltaProcessingState.java:467)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:152)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:359)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:140)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.resources 4 4 2016-12-04 13:16:41.576
+!MESSAGE Exception loading preferences from: /udemy-course-spring-and-hibernate-step3/.settings/org.springframework.ide.eclipse.core.prefs.
+!STACK 1
+org.eclipse.core.runtime.CoreException: File not found: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.springframework.ide.eclipse.core.prefs.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:391)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:507)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.getChild(EclipsePreferences.java:534)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:668)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.resources.ProjectScope.getNode(ProjectScope.java:68)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getEclipsePreferences(SpringCorePreferences.java:45)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.<init>(SpringCorePreferences.java:32)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getProjectPreferences(SpringCorePreferences.java:40)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getProjectPreferences(SpringCorePreferences.java:36)
+	at org.springframework.ide.eclipse.core.PersistablePreferenceObjectSupport.isEnabled(PersistablePreferenceObjectSupport.java:50)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansProject.populateAutoDetectedConfigsAndConfigSetsInternally(BeansProject.java:1112)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansProject$1.run(BeansProject.java:1080)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.FileNotFoundException: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.springframework.ide.eclipse.core.prefs (Le chemin d’accès spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	... 17 more
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2016-12-04 13:16:41.577
+!MESSAGE File not found: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.springframework.ide.eclipse.core.prefs.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.springframework.ide.eclipse.core.prefs (Le chemin d’accès spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:507)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.getChild(EclipsePreferences.java:534)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:668)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.resources.ProjectScope.getNode(ProjectScope.java:68)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getEclipsePreferences(SpringCorePreferences.java:45)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.<init>(SpringCorePreferences.java:32)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getProjectPreferences(SpringCorePreferences.java:40)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getProjectPreferences(SpringCorePreferences.java:36)
+	at org.springframework.ide.eclipse.core.PersistablePreferenceObjectSupport.isEnabled(PersistablePreferenceObjectSupport.java:50)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansProject.populateAutoDetectedConfigsAndConfigSetsInternally(BeansProject.java:1112)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansProject$1.run(BeansProject.java:1080)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.preferences 4 4 2016-12-04 13:16:41.596
+!MESSAGE Exception loading preferences from: C:/Users/Staelen/Desktop/udemy-course-spring-and-hibernate/udemy-course-spring-and-hibernate-step3/.settings/org.springframework.ide.eclipse.core.prefs.
+!STACK 0
+org.osgi.service.prefs.BackingStoreException: Exception loading preferences from: /udemy-course-spring-and-hibernate-step3/.settings/org.springframework.ide.eclipse.core.prefs.
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:515)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.getChild(EclipsePreferences.java:534)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:668)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.resources.ProjectScope.getNode(ProjectScope.java:68)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getEclipsePreferences(SpringCorePreferences.java:45)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.<init>(SpringCorePreferences.java:32)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getProjectPreferences(SpringCorePreferences.java:40)
+	at org.springframework.ide.eclipse.core.SpringCorePreferences.getProjectPreferences(SpringCorePreferences.java:36)
+	at org.springframework.ide.eclipse.core.PersistablePreferenceObjectSupport.isEnabled(PersistablePreferenceObjectSupport.java:50)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansProject.populateAutoDetectedConfigsAndConfigSetsInternally(BeansProject.java:1112)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansProject$1.run(BeansProject.java:1080)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.resources 4 4 2016-12-04 13:16:42.040
+!MESSAGE Exception loading preferences from: /udemy-course-spring-and-hibernate-step3/.settings/org.eclipse.m2e.core.prefs.
+!STACK 1
+org.eclipse.core.runtime.CoreException: File not found: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.eclipse.m2e.core.prefs.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:391)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:507)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.getChild(EclipsePreferences.java:534)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:668)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.internal.resources.ProjectPreferences.deleted(ProjectPreferences.java:83)
+	at org.eclipse.core.internal.resources.ProjectPreferences.deleted(ProjectPreferences.java:134)
+	at org.eclipse.core.internal.resources.Resource.deleteResource(Resource.java:848)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.deleteResource(RefreshLocalVisitor.java:98)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.synchronizeExistence(RefreshLocalVisitor.java:186)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:293)
+	at org.eclipse.core.internal.localstore.CopyVisitor.synchronize(CopyVisitor.java:169)
+	at org.eclipse.core.internal.localstore.CopyVisitor.visit(CopyVisitor.java:187)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:109)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.copy(FileSystemResourceManager.java:313)
+	at org.eclipse.core.internal.resources.Resource.copy(Resource.java:551)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.copyResource(AbstractImageBuilder.java:382)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder$3.visit(BatchImageBuilder.java:223)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:83)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:129)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:93)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:51)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.copyExtraResourcesBack(BatchImageBuilder.java:192)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:120)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:186)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.FileNotFoundException: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.eclipse.m2e.core.prefs (Le chemin d’accès spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	... 45 more
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2016-12-04 13:16:42.040
+!MESSAGE File not found: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.eclipse.m2e.core.prefs.
+!STACK 0
+java.io.FileNotFoundException: C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3\.settings\org.eclipse.m2e.core.prefs (Le chemin d’accès spécifié est introuvable)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:507)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.getChild(EclipsePreferences.java:534)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:668)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.internal.resources.ProjectPreferences.deleted(ProjectPreferences.java:83)
+	at org.eclipse.core.internal.resources.ProjectPreferences.deleted(ProjectPreferences.java:134)
+	at org.eclipse.core.internal.resources.Resource.deleteResource(Resource.java:848)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.deleteResource(RefreshLocalVisitor.java:98)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.synchronizeExistence(RefreshLocalVisitor.java:186)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:293)
+	at org.eclipse.core.internal.localstore.CopyVisitor.synchronize(CopyVisitor.java:169)
+	at org.eclipse.core.internal.localstore.CopyVisitor.visit(CopyVisitor.java:187)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:109)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.copy(FileSystemResourceManager.java:313)
+	at org.eclipse.core.internal.resources.Resource.copy(Resource.java:551)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.copyResource(AbstractImageBuilder.java:382)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder$3.visit(BatchImageBuilder.java:223)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:83)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:129)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:93)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:51)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.copyExtraResourcesBack(BatchImageBuilder.java:192)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:120)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:186)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.preferences 4 4 2016-12-04 13:16:42.054
+!MESSAGE Exception loading preferences from: C:/Users/Staelen/Desktop/udemy-course-spring-and-hibernate/udemy-course-spring-and-hibernate-step3/.settings/org.eclipse.m2e.core.prefs.
+!STACK 0
+org.osgi.service.prefs.BackingStoreException: Exception loading preferences from: /udemy-course-spring-and-hibernate-step3/.settings/org.eclipse.m2e.core.prefs.
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:515)
+	at org.eclipse.core.internal.resources.ProjectPreferences.load(ProjectPreferences.java:492)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.getChild(EclipsePreferences.java:534)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:668)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.internal.resources.ProjectPreferences.deleted(ProjectPreferences.java:83)
+	at org.eclipse.core.internal.resources.ProjectPreferences.deleted(ProjectPreferences.java:134)
+	at org.eclipse.core.internal.resources.Resource.deleteResource(Resource.java:848)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.deleteResource(RefreshLocalVisitor.java:98)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.synchronizeExistence(RefreshLocalVisitor.java:186)
+	at org.eclipse.core.internal.localstore.RefreshLocalVisitor.visit(RefreshLocalVisitor.java:293)
+	at org.eclipse.core.internal.localstore.CopyVisitor.synchronize(CopyVisitor.java:169)
+	at org.eclipse.core.internal.localstore.CopyVisitor.visit(CopyVisitor.java:187)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:109)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.copy(FileSystemResourceManager.java:313)
+	at org.eclipse.core.internal.resources.Resource.copy(Resource.java:551)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.copyResource(AbstractImageBuilder.java:382)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder$3.visit(BatchImageBuilder.java:223)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:83)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:129)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:93)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:51)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.copyExtraResourcesBack(BatchImageBuilder.java:192)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:120)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:47)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:256)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:186)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:16:54.332
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:16:54.334
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:17:03.666
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:17:03.670
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:17:21.359
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:17:21.370
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:18:24.436
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:18:24.440
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:18:35.604
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-12-04 13:18:35.608
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

@@ -31,8 +31,15 @@
 		<list key="issueManagementUrl">
 		</list>
 	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="480" key="width"/>
+		<item value="899" key="x"/>
+		<item value="240" key="y"/>
+		<item value="531" key="height"/>
+	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step4"/>
 			<item value="C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step3"/>
 			<item value="C:\Users\Staelen\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step2"/>
 			<item value="C:\Users\vjona\Desktop\udemy-course-spring-and-hibernate\udemy-course-spring-and-hibernate-step2"/>
@@ -89,5 +96,11 @@
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.editor.dialogs.ManageDependenciesDialog">
+		<item value="845" key="width"/>
+		<item value="711" key="x"/>
+		<item value="206" key="y"/>
+		<item value="450" key="height"/>
 	</section>
 </section>

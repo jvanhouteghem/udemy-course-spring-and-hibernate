@@ -3,6 +3,8 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.jvanhouteghem.springdemo.FortuneService"/>
-<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
 <fullyQualifiedTypeName name="com.jvanhouteghem.springdemo.CricketCoach"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="com.jvanhouteghem.springdemoannotations.CoachAnnotations"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
 </qualifiedTypeNameHistroy>

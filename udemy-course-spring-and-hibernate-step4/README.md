@@ -115,8 +115,9 @@ package com.jvanhouteghem.springdemoannotations;
 
 import org.springframework.stereotype.Component;
 
-//@Component("thatSillyCoach") 
-// Now this use the default bean id "tennisCoach"
+// Now this use the default bean id "tennisCoach" (update : remove @Component("thatSillyCoach"))
+@Component
+
 public class TennisCoach implements CoachAnnotations {
 
 	@Override
@@ -150,6 +151,14 @@ public class AnnotationDemoApp {
 	}
 
 }
+```
+
+Output : 
+
+```
+>>> INFOS: Loading XML bean definitions from class path resource [applicationContextAnnotations.xml]
+>>> Practice your backhand volley
+>>> déc. 04, 2016 1:18:37 PM org.springframework.context.support.ClassPathXmlApplicationContext doClose
 ```
 
 
