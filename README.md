@@ -13,3 +13,5 @@ Summary
 - Step 2 : Spring Dependency Injection - XML Configuration
 - Step 3 : Spring Bean Scopes and Lifecycle
 - Step 4 : Spring Inversion of Control - Java Annotations
+- Step 5 : Bean scopes with annotation 
+- Step 6 : Spring configuration with java code
