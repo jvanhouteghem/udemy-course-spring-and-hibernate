@@ -161,6 +161,132 @@ Output :
 >>> déc. 04, 2016 1:18:37 PM org.springframework.context.support.ClassPathXmlApplicationContext doClose
 ```
 
+III. Spring Dependency Injection with Annotations and Autowiring
+---
+
+For dependency injection, Spring can use auto wiring. 
+Spring will look for a class that matches the property (match by type: class or interface).
+Spring will inject it automatically ... hence it is autowired.
+
+3 Autoriwing injection types : 
+- Constructor injection
+- Setter injection
+- Field injections
+
+3 Steps :
+- Defined the dependency interface and class
+- Create a constructor in your class for injections
+- Configure the dependency injection with @Autowired annotations
+
+A. Autowiring annotation for constructor injection
+
+1) Defined the dependency interface and class
+
+Create new Interface named FortuneService
+
+```java
+public interface FortuneService {
+	
+	public String getFortune();
+
+}
+```
+
+2) Create a class to implement the interface
+
+```java
+import org.springframework.stereotype.Component;
+
+@Component
+public class HappyFortuneService implements FortuneService{
+
+	@Override
+	public String getFortune() {
+		return "Today is your lucky day";
+	}
+
+}
+```
+
+3) Add a new method to the Coach interface
+
+```java
+public interface CoachAnnotations {
+	
+	public String getDailyWorkout();
+	
+	// (new)
+	public String getDailyFortune();
+
+}
+```
+
+B. Create a constructor in your class for injections
+
+1) Update TennisCoach
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class TennisCoach implements CoachAnnotations {
+	
+	// (new)
+	private FortuneService fortuneService;
+	
+	// (new)
+	@Autowired
+	public TennisCoach (FortuneService theFortuneService){
+		fortuneService = theFortuneService;
+	}
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your backhand volley";
+	}
+
+	// (new)
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+}
+```
+
+2) Update AnnotationDemoApp
+
+```java
+public class AnnotationDemoApp {
+
+	public static void main(String[] args) {
+		
+		// read spring config file
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContextAnnotations.xml");
+		
+		// get the bean from spring container
+		CoachAnnotations theCoach = context.getBean("tennisCoach", CoachAnnotations.class);
+		
+		// call a method on the bean
+		System.out.println(theCoach.getDailyWorkout());
+		
+		// call method to get the daily fortune (new)
+		System.out.println(theCoach.getDailyFortune());
+		
+		// close the context
+		context.close();
+	}
+
+}
+```
+
+Output : 
+
+```
+Practice your backhand volley
+Today is your lucky day
+```
 
 
 

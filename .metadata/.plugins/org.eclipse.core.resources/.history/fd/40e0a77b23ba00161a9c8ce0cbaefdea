@@ -1,0 +1,5 @@
+package com.jvanhouteghem.springdemoannotations;
+
+public class HappyFortuneService implements FortuneService{
+
+}
