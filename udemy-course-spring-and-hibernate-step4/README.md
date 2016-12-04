@@ -178,7 +178,7 @@ Spring will inject it automatically ... hence it is autowired.
 - Create a constructor in your class for injections
 - Configure the dependency injection with @Autowired annotations
 
-A. Constructor injection with annotations and autowiring
+### A. Constructor injection with annotations and autowiring
 
 1) Defined the dependency interface and class
 
@@ -286,7 +286,7 @@ Output :
 >>> Today is your lucky day
 ```
 
-B. Setter injection with annotations and autowiring
+### B. Setter injection with annotations and autowiring
 
 We will inject dependencies by calling setter method(s) on your class
 
@@ -355,7 +355,6 @@ Output :
 
 Now let's try with any method name : 
 
-B. Part 2
 
 ```
 import org.springframework.beans.factory.annotation.Autowired;
@@ -405,8 +404,13 @@ It works too !!
 >>> Practice your backhand volley
 >>> Today is your lucky day
 ```
+### C. Field injection with annotations and autowiring
 
+With field injection you can inject dependencies by setting field values on your class directly (even private fields)
+Its happens behind the scene with java technology called Java reflection.
 
+This applied directly to the field.
+No need for setter methods.
 
 
 
