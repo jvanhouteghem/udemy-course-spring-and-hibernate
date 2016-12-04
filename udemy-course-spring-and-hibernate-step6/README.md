@@ -260,7 +260,7 @@ public class SwimCoach implements CoachAnnotations {
 
 4) Update SwimJavaConfigDemoApp
 
-```
+```java
 public class SwimJavaConfigDemoApp {
 
 	public static void main(String[] args) {
