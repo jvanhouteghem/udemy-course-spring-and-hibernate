@@ -13,14 +13,6 @@ public class TennisCoach implements CoachAnnotations {
 		System.out.println("TennisCoach : inside default constructor");
 	}
 	
-	// define a setter method
-	// Autowired for inject dependency
-	@Autowired
-	public void setFortuneService(FortuneService theFortuneService){
-		System.out.println("TennisCoach : inside setFortuneService() method");
-		fortuneService = theFortuneService;
-	}
-	
 	/*
 	@Autowired
 	public TennisCoach (FortuneService theFortuneService){

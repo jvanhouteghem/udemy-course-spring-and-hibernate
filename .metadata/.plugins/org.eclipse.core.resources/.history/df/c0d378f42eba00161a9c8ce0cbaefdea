@@ -17,7 +17,6 @@ public class TennisCoach implements CoachAnnotations {
 	// Autowired for inject dependency
 	@Autowired
 	public void setFortuneService(FortuneService theFortuneService){
-		System.out.println("TennisCoach : inside setFortuneService() method");
 		fortuneService = theFortuneService;
 	}
 	

@@ -178,7 +178,7 @@ Spring will inject it automatically ... hence it is autowired.
 - Create a constructor in your class for injections
 - Configure the dependency injection with @Autowired annotations
 
-A. Autowiring annotation for constructor injection
+A. Constructor injection with annotations and autowiring
 
 1) Defined the dependency interface and class
 
@@ -284,8 +284,75 @@ public class AnnotationDemoApp {
 Output : 
 
 ```
-Practice your backhand volley
-Today is your lucky day
+>>> Practice your backhand volley
+>>> Today is your lucky day
+```
+
+C. Setter injection with annotations and autowiring
+
+We will inject dependencies by calling setter method(s) on your class
+
+How it works ?
+- Injecting FortuneService into a Coach implementation
+- Spring will scan @Components
+- Any one implements FortuneService interface ???
+- If so, let's inject them. For example : HappyFortuneService
+
+2 steps : 
+- Create setter method(s) in your class for injections
+- Configure the dependency injection with @Autowired Annotation
+
+1) Create setter method(s) in your class for injections
+
+Update TennisCoach : 
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class TennisCoach implements CoachAnnotations {
+	
+	private FortuneService fortuneService;
+	
+	// define a default constructor (new)
+	public TennisCoach(){
+		System.out.println("TennisCoach : inside default constructor");
+	}
+	
+	// define a setter method (new)
+	@Autowired
+	public void setFortuneService(FortuneService theFortuneService){
+		System.out.println("TennisCoach : inside setFortuneService() method");
+		fortuneService = theFortuneService;
+	}
+	
+	/* (update)
+	@Autowired
+	public TennisCoach (FortuneService theFortuneService){
+		fortuneService = theFortuneService;
+	}*/
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your backhand volley";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+}
+```
+
+Output : 
+
+```
+>>> TennisCoach : inside default constructor
+>>> TennisCoach : inside setFortuneService() method
+>>> Practice your backhand volley
+>>> Today is your lucky day
 ```
 
 
