@@ -221,9 +221,7 @@ public interface CoachAnnotations {
 }
 ```
 
-B. Create a constructor in your class for injections
-
-1) Update TennisCoach
+4) Create a constructor in your class for injections : update TennisCoach
 
 ```java
 import org.springframework.beans.factory.annotation.Autowired;
@@ -255,7 +253,7 @@ public class TennisCoach implements CoachAnnotations {
 }
 ```
 
-2) Update AnnotationDemoApp
+5) Update AnnotationDemoApp
 
 ```java
 public class AnnotationDemoApp {
@@ -288,7 +286,7 @@ Output :
 >>> Today is your lucky day
 ```
 
-C. Setter injection with annotations and autowiring
+B. Setter injection with annotations and autowiring
 
 We will inject dependencies by calling setter method(s) on your class
 
@@ -351,6 +349,59 @@ Output :
 ```
 >>> TennisCoach : inside default constructor
 >>> TennisCoach : inside setFortuneService() method
+>>> Practice your backhand volley
+>>> Today is your lucky day
+```
+
+Now let's try with any method name : 
+
+B. Part 2
+
+```
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class TennisCoach implements CoachAnnotations {
+	
+	private FortuneService fortuneService;
+	
+	// define a default constructor
+	public TennisCoach(){
+		System.out.println("TennisCoach : inside default constructor");
+	}
+	
+	// define a setter method (update : rename setFortuneService to doSomeCrazyStuff)
+	@Autowired
+	public void doSomeCrazyStuff(FortuneService theFortuneService){
+		System.out.println("TennisCoach : inside doSomeCrazyStuff() method");
+		fortuneService = theFortuneService;
+	}
+	
+	/*
+	@Autowired
+	public TennisCoach (FortuneService theFortuneService){
+		fortuneService = theFortuneService;
+	}*/
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your backhand volley";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+}
+```
+
+It works too !!
+
+```
+>>> TennisCoach : inside default constructor
+>>> TennisCoach : inside doSomeCrazyStuff() method
 >>> Practice your backhand volley
 >>> Today is your lucky day
 ```
