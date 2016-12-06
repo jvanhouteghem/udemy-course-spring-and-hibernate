@@ -3,8 +3,8 @@
 
 	<head>
 	
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/my-test.css">
-    	<script src="${pageContext.request.contextPath}/resources/js/simple-test.js"></script>	
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
+    	<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>	
 	
 	</head>
 
