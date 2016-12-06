@@ -15,3 +15,4 @@ Summary
 - Step 4 : Spring Inversion of Control - Java Annotations
 - Step 5 : Bean scopes with annotation 
 - Step 6 : Spring configuration with java code
+- Step 7 : Spring MVC
