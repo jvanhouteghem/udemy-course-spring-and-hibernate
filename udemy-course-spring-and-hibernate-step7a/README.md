@@ -242,3 +242,79 @@ public class HelloWorldController {
 </body>
 </html>
 ```
+
+V. What about css, img and js ?
+---
+
+1) Update spring-mvc-servlet.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- Step 3: Add support for component scanning -->
+	<context:component-scan base-package="com.luv2code.springdemo" />
+
+	<!-- Step 4: Add support for conversion, formatting and validation support -->
+	<mvc:annotation-driven/>
+
+	<!-- Step 5: Define Spring MVC view resolver -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+    <!-- Step 6 : load img, css, js ... (new) -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+</beans>
+```
+
+2) Create "ressources" folder in WebContent
+
+3) In ressources folder add 3 folders : css, img, js
+
+4) In css folder create new main.css file
+
+```css
+body {
+    background-color: lightblue;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+```
+
+5) In js folder add new main.js file
+
+```js
+function doSomeWork() {
+	
+	alert("I'm doing some work!!!");
+	
+}
+```
+
+6) Update main-menu.jsp
+
+```html
+
+```
