@@ -16,3 +16,4 @@ Summary
 - Step 5 : Bean scopes with annotation 
 - Step 6 : Spring configuration with java code
 - Step 7 : Spring MVC
+- Step 8 : Hibernate
